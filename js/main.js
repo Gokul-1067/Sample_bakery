@@ -3,24 +3,31 @@
 // Concept: "Bakery as an Immersive Sensory Experience"
 // ==========================================================================
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Preloader Dismissal
-  window.addEventListener('load', () => {
+// Preloader Dismissal Function (Safe, fast, and fail-safe)
+function dismissPreloader() {
+  const preloader = document.getElementById('preloader');
+  if (preloader && !preloader.classList.contains('done')) {
+    preloader.classList.add('done');
     setTimeout(() => {
-      const preloader = document.getElementById('preloader');
-      if (preloader) {
-        preloader.classList.add('done');
-      }
-    }, 450);
-  });
-
-  // Fallback if load already fired
-  if (document.readyState === 'complete') {
-    setTimeout(() => {
-      document.getElementById('preloader')?.classList.add('done');
-    }, 450);
+      preloader.style.display = 'none';
+    }, 750);
   }
+}
 
+// Immediate dismissal triggers
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(dismissPreloader, 200);
+  });
+} else {
+  setTimeout(dismissPreloader, 150);
+}
+
+// Fail-safe listeners: window load and a hard safety timeout (1.2s max)
+window.addEventListener('load', dismissPreloader);
+setTimeout(dismissPreloader, 1200);
+
+document.addEventListener('DOMContentLoaded', () => {
   // Register GSAP plugins
   if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
@@ -59,21 +66,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const ring = document.querySelector('.cursor-ring');
 
   if (dot && ring && window.matchMedia('(pointer: fine)').matches) {
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
-    let ringX = mouseX;
-    let ringY = mouseY;
+    let mouseMoved = false;
+    let mouseX = -100;
+    let mouseY = -100;
+    let ringX = -100;
+    let ringY = -100;
 
     window.addEventListener('mousemove', (e) => {
+      if (!mouseMoved) {
+        mouseMoved = true;
+        dot.style.opacity = '1';
+        ring.style.opacity = '1';
+        ringX = e.clientX;
+        ringY = e.clientY;
+      }
       mouseX = e.clientX;
       mouseY = e.clientY;
       dot.style.transform = `translate(${mouseX - 4}px, ${mouseY - 4}px)`;
-    });
+    }, { passive: true });
 
     const renderCursor = () => {
-      ringX += (mouseX - ringX) * 0.16;
-      ringY += (mouseY - ringY) * 0.16;
-      ring.style.transform = `translate(${ringX - 19}px, ${ringY - 19}px)`;
+      if (mouseMoved) {
+        ringX += (mouseX - ringX) * 0.16;
+        ringY += (mouseY - ringY) * 0.16;
+        ring.style.transform = `translate(${ringX - 19}px, ${ringY - 19}px)`;
+      }
       requestAnimationFrame(renderCursor);
     };
     requestAnimationFrame(renderCursor);
