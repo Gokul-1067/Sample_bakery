@@ -1,219 +1,337 @@
-// MAANNAPPAM BAKERY & CAFE — Animation Engine & Interactivity
+// ==========================================================================
+// MAANNAPPAM BAKERY & CAFE — KINETIC HEARTH MOTION & INTERACTION ENGINE
+// Concept: "Bakery as an Immersive Sensory Experience"
+// ==========================================================================
 
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    document.getElementById('preloader')?.classList.add('done');
-  }, 850);
-});
-
-// Register GSAP ScrollTrigger if available
-if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
-// Reveal animations via IntersectionObserver (safe for CSS grid and flex items)
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-
-document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-
-// Animated Number Counters
-document.querySelectorAll('[data-count]').forEach((el) => {
-  const end = +el.dataset.count;
-  if (typeof ScrollTrigger !== 'undefined' && typeof gsap !== 'undefined') {
-    ScrollTrigger.create({
-      trigger: el,
-      start: 'top 90%',
-      once: true,
-      onEnter: () => {
-        let obj = { val: 0 };
-        gsap.to(obj, {
-          val: end,
-          duration: 2.2,
-          ease: 'power2.out',
-          onUpdate: () => {
-            el.textContent = Math.floor(obj.val).toLocaleString() + (end >= 1000 ? '+' : (el.dataset.suffix || ''));
-          }
-        });
+document.addEventListener('DOMContentLoaded', () => {
+  // Preloader Dismissal
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        preloader.classList.add('done');
       }
-    });
-  } else {
-    el.textContent = end.toLocaleString();
+    }, 450);
+  });
+
+  // Fallback if load already fired
+  if (document.readyState === 'complete') {
+    setTimeout(() => {
+      document.getElementById('preloader')?.classList.add('done');
+    }, 450);
   }
-});
 
-// 3D Perspective Tilt on interactive cards (Hero visual, Worlds, Quotes, Team, Values)
-document.querySelectorAll('.tilt').forEach((card) => {
-  if (card.classList.contains('item') || card.classList.contains('prod')) return;
-  card.addEventListener('mousemove', (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    card.style.transform = `perspective(900px) rotateY(${x * 12}deg) rotateX(${-y * 12}deg) translateY(-4px)`;
-  });
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = '';
-  });
-});
+  // Register GSAP plugins
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+  }
 
-// Custom Magnetic Cursor
-const dot = document.querySelector('.cursor-dot');
-const ring = document.querySelector('.cursor-ring');
+  // ------------------------------------------------------------------------
+  // 1. Sticky Nav Transition
+  // ------------------------------------------------------------------------
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      nav?.classList.add('scrolled');
+    } else {
+      nav?.classList.remove('scrolled');
+    }
+  }, { passive: true });
 
-if (dot && ring && window.matchMedia('(pointer: fine)').matches) {
-  let mouseX = 0, mouseY = 0;
-  let ringX = 0, ringY = 0;
+  // Mobile Navigation Drawer
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
 
-  window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    dot.style.transform = `translate(${mouseX - 4}px, ${mouseY - 4}px)`;
+  burger?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('open');
   });
 
-  (function renderCursor() {
-    ringX += (mouseX - ringX) * 0.16;
-    ringY += (mouseY - ringY) * 0.16;
-    ring.style.transform = `translate(${ringX - 18}px, ${ringY - 18}px)`;
+  mobileMenu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.remove('open');
+    });
+  });
+
+  // ------------------------------------------------------------------------
+  // 2. Magnetic Amber Glow Cursor
+  // ------------------------------------------------------------------------
+  const dot = document.querySelector('.cursor-dot');
+  const ring = document.querySelector('.cursor-ring');
+
+  if (dot && ring && window.matchMedia('(pointer: fine)').matches) {
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let ringX = mouseX;
+    let ringY = mouseY;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dot.style.transform = `translate(${mouseX - 4}px, ${mouseY - 4}px)`;
+    });
+
+    const renderCursor = () => {
+      ringX += (mouseX - ringX) * 0.16;
+      ringY += (mouseY - ringY) * 0.16;
+      ring.style.transform = `translate(${ringX - 19}px, ${ringY - 19}px)`;
+      requestAnimationFrame(renderCursor);
+    };
     requestAnimationFrame(renderCursor);
-  })();
 
-  // Cursor scaling on links and buttons
-  document.querySelectorAll('a, button, .magnetic, .world, .item').forEach((interactive) => {
-    interactive.addEventListener('mouseenter', () => {
-      ring.style.width = '52px';
-      ring.style.height = '52px';
-      ring.style.borderColor = 'var(--terracotta)';
-      ring.style.background = 'rgba(232, 168, 72, 0.08)';
-    });
-    interactive.addEventListener('mouseleave', () => {
-      ring.style.width = '36px';
-      ring.style.height = '36px';
-      ring.style.borderColor = 'var(--honey)';
-      ring.style.background = 'transparent';
-    });
-  });
-}
-
-// Magnetic Button Physics
-document.querySelectorAll('.magnetic').forEach((btn) => {
-  btn.addEventListener('mousemove', (e) => {
-    const rect = btn.getBoundingClientRect();
-    const x = (e.clientX - rect.left - rect.width / 2) * 0.22;
-    const y = (e.clientY - rect.top - rect.height / 2) * 0.22;
-    btn.style.transform = `translate(${x}px, ${y}px)`;
-  });
-  btn.addEventListener('mouseleave', () => {
-    btn.style.transform = '';
-  });
-});
-
-// Mobile Burger Navigation
-const burger = document.getElementById('burger');
-const mobileMenu = document.getElementById('mobileMenu');
-
-burger?.addEventListener('click', () => {
-  mobileMenu?.classList.toggle('open');
-});
-
-mobileMenu?.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
-    mobileMenu?.classList.remove('open');
-  });
-});
-
-// Floating Bakery Particles Canvas
-const floatCanvas = document.getElementById('floaters');
-if (floatCanvas) {
-  const ctx = floatCanvas.getContext('2d');
-  let width, height;
-  let particles = [];
-  const bakeryEmojis = ['🥐', '🥖', '🥟', '🥨', '☕', '🍰', '🧁', '🍪'];
-
-  function resizeCanvas() {
-    width = floatCanvas.width = floatCanvas.offsetWidth;
-    height = floatCanvas.height = floatCanvas.offsetHeight;
-  }
-  resizeCanvas();
-  window.addEventListener('resize', resizeCanvas);
-
-  for (let i = 0; i < 22; i++) {
-    particles.push({
-      emoji: bakeryEmojis[i % bakeryEmojis.length],
-      x: Math.random() * (width || 1200),
-      y: Math.random() * (height || 800),
-      size: 18 + Math.random() * 24,
-      speed: 0.35 + Math.random() * 0.75,
-      oscillation: Math.random() * Math.PI * 2
+    // Interactive Hover Magnification
+    const hoverTargets = 'a, button, .cat-btn, .food-card, .satellite-card, .atelier-item, .stat-tile, .timeline-tile, .bell-interactive-trigger, .booking-card';
+    document.querySelectorAll(hoverTargets).forEach((el) => {
+      el.addEventListener('mouseenter', () => {
+        ring.style.width = '52px';
+        ring.style.height = '52px';
+        ring.style.borderColor = 'var(--amber)';
+        ring.style.background = 'rgba(232, 168, 72, 0.12)';
+      });
+      el.addEventListener('mouseleave', () => {
+        ring.style.width = '38px';
+        ring.style.height = '38px';
+        ring.style.borderColor = 'rgba(232, 168, 72, 0.6)';
+        ring.style.background = 'transparent';
+      });
     });
   }
 
-  (function animateParticles() {
-    if (!width || !height) return;
-    ctx.clearRect(0, 0, width, height);
-    ctx.globalAlpha = 0.45;
+  // ------------------------------------------------------------------------
+  // 3. 3D Parallax & Depth Tilt on Hero Stage
+  // ------------------------------------------------------------------------
+  const heroStage = document.querySelector('.hero-stage');
+  const centerpiece = document.querySelector('.hero-heroic-centerpiece');
+  const sat1 = document.querySelector('.sat-1');
+  const sat2 = document.querySelector('.sat-2');
+  const sat3 = document.querySelector('.sat-3');
 
-    particles.forEach((p) => {
-      p.y -= p.speed;
-      p.oscillation += 0.012;
-      if (p.y < -40) {
-        p.y = height + 40;
-        p.x = Math.random() * width;
-      }
-      ctx.font = `${p.size}px serif`;
-      const waveX = (p.x + Math.sin(p.oscillation) * 22) % width;
-      ctx.fillText(p.emoji, waveX < 0 ? waveX + width : waveX, p.y);
+  if (heroStage && centerpiece && window.matchMedia('(pointer: fine)').matches) {
+    heroStage.addEventListener('mousemove', (e) => {
+      const rect = heroStage.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+      // Subtle 3D tilt for centerpiece
+      centerpiece.style.transform = `perspective(1000px) rotateY(${x * 14}deg) rotateX(${-y * 14}deg) translateZ(10px)`;
+
+      // Counter-depth parallax for satellites
+      if (sat1) sat1.style.transform = `translate3d(${-x * 32}px, ${-y * 28}px, 30px)`;
+      if (sat2) sat2.style.transform = `translate3d(${x * 36}px, ${y * 32}px, 40px)`;
+      if (sat3) sat3.style.transform = `translate3d(${-x * 24}px, ${y * 26}px, 20px)`;
     });
 
-    requestAnimationFrame(animateParticles);
-  })();
-}
+    heroStage.addEventListener('mouseleave', () => {
+      centerpiece.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateZ(0)';
+      if (sat1) sat1.style.transform = '';
+      if (sat2) sat2.style.transform = '';
+      if (sat3) sat3.style.transform = '';
+    });
+  }
 
-// Procedural Film Grain Canvas Overlay
-const grainCanvas = document.getElementById('grain');
-if (grainCanvas) {
-  const gCtx = grainCanvas.getContext('2d');
-  grainCanvas.width = 180;
-  grainCanvas.height = 180;
+  // ------------------------------------------------------------------------
+  // 4. Interactive 4 PM Bell Rush Feature
+  // ------------------------------------------------------------------------
+  const bellBtn = document.getElementById('bellChimeBtn') || document.querySelector('.bell-interactive-trigger');
+  
+  // Create toast element dynamically if not present
+  let chimeToast = document.querySelector('.chime-toast');
+  if (!chimeToast) {
+    chimeToast = document.createElement('div');
+    chimeToast.className = 'chime-toast';
+    chimeToast.innerHTML = `
+      <span class="chime-toast-icon">🔔</span>
+      <div>
+        <strong>Deck 02 Fired! 4:00 PM Snack Rush Is Live</strong><br>
+        <span style="font-size:12px; opacity:0.85;">Piping-hot Meat Puffs &amp; Pazhampori ready at the counter!</span>
+      </div>
+    `;
+    document.body.appendChild(chimeToast);
+  }
 
-  setInterval(() => {
-    const imgData = gCtx.createImageData(180, 180);
-    const buffer = imgData.data;
-    for (let i = 0; i < buffer.length; i += 4) {
-      const val = Math.random() * 255;
-      buffer[i] = val;
-      buffer[i + 1] = val;
-      buffer[i + 2] = val;
-      buffer[i + 3] = 255;
+  let toastTimer = null;
+  bellBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    chimeToast.classList.add('active');
+
+    // Jiggle bell cards for high-energy response
+    const mainCard = document.querySelector('.bell-card-main');
+    const floatCard = document.querySelector('.bell-card-float');
+
+    if (mainCard) {
+      mainCard.style.transform = 'rotate(-1deg) scale(1.05)';
+      setTimeout(() => { mainCard.style.transform = ''; }, 600);
     }
-    gCtx.putImageData(imgData, 0, 0);
-  }, 110);
-}
+    if (floatCard) {
+      floatCard.style.transform = 'rotate(8deg) scale(1.08)';
+      setTimeout(() => { floatCard.style.transform = ''; }, 600);
+    }
 
-// Category Navigation Filter on Menu page
-const catButtons = document.querySelectorAll('.cat-nav button');
-catButtons.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    catButtons.forEach((b) => b.classList.remove('active'));
-    btn.classList.add('active');
-    const targetSection = document.querySelector(btn.dataset.target);
-    if (targetSection) {
-      targetSection.scrollIntoView({ behavior: 'smooth' });
-      if (typeof gsap !== 'undefined') {
-        gsap.fromTo(targetSection, { scale: 0.98, opacity: 0.6 }, { scale: 1, opacity: 1, duration: 0.5, ease: 'power2.out' });
-      }
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      chimeToast.classList.remove('active');
+    }, 4200);
+  });
+
+  // ------------------------------------------------------------------------
+  // 5. Dynamic Category Filter System (Spotlight & Catalog)
+  // ------------------------------------------------------------------------
+  const catButtons = document.querySelectorAll('.cat-btn');
+  const foodCards = document.querySelectorAll('.food-card');
+
+  catButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      catButtons.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter || 'all';
+
+      foodCards.forEach((card) => {
+        const category = card.dataset.category || '';
+        if (filter === 'all' || category === filter) {
+          card.classList.remove('filtered-out');
+          if (typeof gsap !== 'undefined') {
+            gsap.fromTo(card, 
+              { opacity: 0, y: 15, scale: 0.97 },
+              { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: 'power2.out' }
+            );
+          } else {
+            card.style.opacity = '1';
+            card.style.transform = 'none';
+          }
+        } else {
+          card.classList.add('filtered-out');
+        }
+      });
+    });
+  });
+
+  // ------------------------------------------------------------------------
+  // 6. Interactive Ateliers Accordion
+  // ------------------------------------------------------------------------
+  const atelierItems = document.querySelectorAll('.atelier-item');
+  atelierItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      atelierItems.forEach((it) => it.classList.remove('active'));
+      item.classList.add('active');
+    });
+  });
+
+  // ------------------------------------------------------------------------
+  // 7. Interactive Table Reservation Form
+  // ------------------------------------------------------------------------
+  const bookingForm = document.getElementById('reservationForm');
+  bookingForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const submitBtn = bookingForm.querySelector('button[type="submit"]');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span>✨ Reserving Your Hearth Table…</span>';
+      
+      setTimeout(() => {
+        bookingForm.innerHTML = `
+          <div style="background: rgba(232, 168, 72, 0.08); border: 1.5px solid var(--amber); border-radius: 20px; padding: 36px; text-align: center;">
+            <div style="font-size: 42px; margin-bottom: 14px;">🥐✨</div>
+            <h3 style="font-family: var(--font-d); font-size: 26px; color: var(--cream); margin-bottom: 10px;">Hearth Table Reserved!</h3>
+            <p style="color: var(--cream-soft); font-size: 15px; line-height: 1.6; max-width: 480px; margin: 0 auto;">
+              We have received your reservation request. Our host at Bakery Junction will prepare your warm table and greeting. See you at the hearth!
+            </p>
+          </div>
+        `;
+      }, 900);
     }
   });
-});
 
-// Hero Intro Animations
-if (typeof gsap !== 'undefined') {
-  gsap.from('.mega', { y: 80, opacity: 0, duration: 1.2, ease: 'power4.out', delay: 0.8 });
-  gsap.from('.hero-visual', { x: 80, opacity: 0, duration: 1.2, ease: 'power3.out', delay: 1.0 });
-  gsap.from('.lede, .hero-btns, .hero-stats', { y: 40, opacity: 0, duration: 1.0, ease: 'power2.out', delay: 1.1, stagger: 0.15 });
-}
+  // ------------------------------------------------------------------------
+  // 8. Animated Counters via GSAP ScrollTrigger
+  // ------------------------------------------------------------------------
+  document.querySelectorAll('[data-count]').forEach((el) => {
+    const end = +el.dataset.count;
+    if (typeof ScrollTrigger !== 'undefined' && typeof gsap !== 'undefined') {
+      ScrollTrigger.create({
+        trigger: el,
+        start: 'top 90%',
+        once: true,
+        onEnter: () => {
+          let countObj = { val: 0 };
+          gsap.to(countObj, {
+            val: end,
+            duration: 1.8,
+            ease: 'power2.out',
+            onUpdate: () => {
+              el.textContent = Math.floor(countObj.val).toLocaleString() + (el.dataset.suffix || (end >= 1000 ? '+' : ''));
+            }
+          });
+        }
+      });
+    } else {
+      el.textContent = end.toLocaleString() + (el.dataset.suffix || '');
+    }
+  });
+
+  // ------------------------------------------------------------------------
+  // 9. Procedural Tactile Film Grain Canvas
+  // ------------------------------------------------------------------------
+  const grainCanvas = document.getElementById('grain');
+  if (grainCanvas) {
+    const gCtx = grainCanvas.getContext('2d');
+    grainCanvas.width = 160;
+    grainCanvas.height = 160;
+
+    let grainInterval = setInterval(() => {
+      const imgData = gCtx.createImageData(160, 160);
+      const buffer = imgData.data;
+      for (let i = 0; i < buffer.length; i += 4) {
+        const val = Math.random() * 255;
+        buffer[i] = val;
+        buffer[i + 1] = val;
+        buffer[i + 2] = val;
+        buffer[i + 3] = 255;
+      }
+      gCtx.putImageData(imgData, 0, 0);
+    }, 120);
+  }
+
+  // ------------------------------------------------------------------------
+  // 10. Ambient Floating Hearth Embers Canvas
+  // ------------------------------------------------------------------------
+  const embersCanvas = document.getElementById('floaters');
+  if (embersCanvas) {
+    const ctx = embersCanvas.getContext('2d');
+    let width = embersCanvas.width = embersCanvas.offsetWidth || window.innerWidth;
+    let height = embersCanvas.height = embersCanvas.offsetHeight || window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      if (!embersCanvas) return;
+      width = embersCanvas.width = embersCanvas.offsetWidth || window.innerWidth;
+      height = embersCanvas.height = embersCanvas.offsetHeight || window.innerHeight;
+    }, { passive: true });
+
+    const particles = Array.from({ length: 28 }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      size: Math.random() * 2.2 + 0.8,
+      speedY: Math.random() * 0.7 + 0.3,
+      speedX: (Math.random() - 0.5) * 0.5,
+      opacity: Math.random() * 0.6 + 0.2,
+      color: Math.random() > 0.4 ? 'rgba(232, 168, 72,' : 'rgba(200, 90, 50,'
+    }));
+
+    const renderEmbers = () => {
+      ctx.clearRect(0, 0, width, height);
+      particles.forEach((p) => {
+        p.y -= p.speedY;
+        p.x += p.speedX;
+        if (p.y < 0) {
+          p.y = height + 10;
+          p.x = Math.random() * width;
+        }
+        ctx.fillStyle = `${p.color}${p.opacity})`;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      requestAnimationFrame(renderEmbers);
+    };
+    requestAnimationFrame(renderEmbers);
+  }
+});

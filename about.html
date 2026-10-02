@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us — Maannappam Bakery &amp; Cafe | Heritage, Craft &amp; Story</title>
+  <title>Our Heritage &amp; Craft — Maannappam Bakery &amp; Cafe</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,9 +14,10 @@
   <!-- Preloader -->
   <div id="preloader">
     <div class="loader-inner">
-      <div class="loader-cart">🥖</div>
-      <div class="loader-bar"><span></span></div>
-      <div class="loader-text">MAANNAPPAM <em>our story, hearths &amp; craft…</em></div>
+      <div class="loader-emblem">🥐</div>
+      <div class="loader-title">MAANNAPPAM</div>
+      <div class="loader-track"><span></span></div>
+      <div class="loader-text"><em>unfolding 28 years of hearth chronicle…</em></div>
     </div>
   </div>
 
@@ -25,21 +26,33 @@
   <div class="cursor-ring"></div>
   <canvas id="grain"></canvas>
 
-  <!-- Navigation -->
+  <!-- Top Announcement Bar -->
+  <div class="top-ticker">
+    <div><b>DECK 02 ACTIVE @ 220°C:</b> Next Hot Malabar Snack Rush Tolls at 4:00 PM</div>
+    <div>Kochi Flagship, Bakery Junction • <a href="visit.html">Find Us &rarr;</a></div>
+  </div>
+
+  <!-- Main Navigation Bar -->
   <header id="nav">
     <a href="index.html" class="logo">
-      <span class="logo-badge">M</span>
-      <span>MAANNAPPAM <small>BAKERY &amp; CAFE</small></span>
+      <div class="logo-badge">M</div>
+      <div class="logo-title">
+        <span>MAANNAPPAM</span>
+        <small>Boulangerie &amp; Tea Bar</small>
+      </div>
     </a>
     <nav class="links">
       <a href="index.html">Home</a>
-      <a href="menu.html">Menu</a>
-      <a href="about.html" class="active">About Us</a>
-      <a href="visit.html">Visit Us</a>
+      <a href="menu.html">Menu &amp; Catalog</a>
+      <a href="about.html" class="active">Our Heritage</a>
+      <a href="visit.html">Visit &amp; Hours</a>
     </nav>
-    <div class="nav-cta">
-      <span class="open-dot"></span> Fresh Bakes 6:30AM – 10PM 
-      <a href="visit.html" class="btn btn-lime magnetic">Find Bakery</a>
+    <div class="nav-actions">
+      <div class="live-pill">
+        <span class="live-dot"></span>
+        <span>Open 6:30 AM – 10 PM</span>
+      </div>
+      <a href="visit.html#inquiry" class="btn btn-amber">Reserve / Order</a>
     </div>
     <button id="burger" aria-label="Toggle Navigation">
       <span></span>
@@ -51,276 +64,212 @@
   <!-- Mobile Menu Overlay -->
   <div id="mobileMenu">
     <a href="index.html">Home</a>
-    <a href="menu.html">Menu</a>
-    <a href="about.html" class="active">About Us</a>
-    <a href="visit.html">Visit Us</a>
+    <a href="menu.html">Menu &amp; Catalog</a>
+    <a href="about.html" class="active">Our Heritage</a>
+    <a href="visit.html">Visit &amp; Hours</a>
   </div>
 
   <!-- Page Hero -->
-  <section class="page-hero">
-    <p class="kicker">OUR HERITAGE &amp; CRAFT — EST. 1998</p>
-    <h1>Two culinary worlds.<br><em>One roaring hearth.</em></h1>
-    <p>Where traditional Kerala tea-time nostalgia meets Parisian butter lamination and slow wild-yeast sourdough. Discover the fires, the recipes, and the 28-year obsession behind every crumb.</p>
+  <section class="subpage-hero">
+    <span class="hero-eyebrow">CHRONICLE &amp; ROOTS • ESTABLISHED 1998</span>
+    <h1>Two Culinary Worlds.<br><em>One Roaring Hearth.</em></h1>
+    <p>
+      Where time-honored Kerala tea-time culture meets the rigorous precision of French butter lamination and slow wild-yeast sourdough. Discover the fires, the recipes, and the 28-year devotion behind every single crumb.
+    </p>
   </section>
 
   <!-- Key Statistics Strip -->
-  <div class="stat-strip reveal">
-    <div class="stat-box tilt">
-      <b data-count="1998">0</b>
-      <span>First Hearth in Kochi</span>
+  <div class="stats-banner">
+    <div class="stat-tile">
+      <b data-count="1998">1998</b>
+      <span>First Stone Hearth</span>
     </div>
-    <div class="stat-box tilt">
-      <b data-count="81">0</b>
-      <span>Laminated Butter Layers</span>
+    <div class="stat-tile">
+      <b data-count="81">81</b>
+      <span>Butter Laminated Layers</span>
     </div>
-    <div class="stat-box tilt">
-      <b data-count="72" data-suffix="h">0</b>
-      <span>Slow Wild Fermentation</span>
+    <div class="stat-tile">
+      <b>36 hrs</b>
+      <span>Wild Sourdough Ferment</span>
     </div>
-    <div class="stat-box tilt">
-      <b data-count="150" data-suffix="+">0</b>
+    <div class="stat-tile">
+      <b data-count="150" data-suffix="+">150+</b>
       <span>Daily Handcrafted Bakes</span>
     </div>
   </div>
 
-  <!-- Chapter 01: The Wood-Fired Roots (1998) -->
-  <section class="about-teaser reveal">
-    <div class="at-img tilt">
-      <img src="images/brick-oven-hd.jpg" alt="Wood-fired brick hearth oven at Maannappam">
-      <div class="at-badge">ESTD <b>1998</b> KOCHI</div>
-    </div>
-    <div class="at-copy">
-      <p class="kicker">CHAPTER 01 • OUR ROOTS</p>
-      <h2>It all began with a wood-fired stone oven at Bakery Junction.</h2>
-      <p>
-        In 1998, Maannappam opened its doors in Kochi with a single brick oven, glowing casuarina wood embers, and an uncompromising commitment to pure ingredients. Our founder began with grandmother's handwritten spice notes: roasting whole Tellicherry black peppercorns, hand-crushing green Idukki cardamom, and slow-cooking spiced minced meat for the now-legendary evening puffs.
-      </p>
-      <p>
-        By 4:00 PM every afternoon, the sound of the bakery brass bell signaled that golden pazhampori was coming out of fresh cold-pressed coconut oil, and trays of bubbling curry puffs were leaving the stone hearth. It wasn't just a snack counter—it became an essential daily neighborhood ritual.
-      </p>
-      <div class="at-points">
-        <span>🔥 Casuarina Wood Embers</span>
-        <span>🌿 Tellicherry Farm Spices</span>
-        <span>🔔 The 4 PM Snack Bell</span>
-        <span>🥥 Pure Coconut Oil</span>
+  <!-- Chapter 01: The Wood-Fired Roots -->
+  <section class="story-collage-section" style="padding-top:20px;">
+    <div class="story-grid">
+      <div class="story-visual-cluster">
+        <div class="story-main-img">
+          <img src="images/brick-oven-hd.jpg" alt="Original wood-fired stone oven at Maannappam">
+        </div>
+        <div class="story-overlap-card">
+          <img src="images/meat-puff.jpg" alt="Golden flaky meat puff">
+        </div>
+        <div class="story-seal">
+          <b>1998</b>
+          <span>Roots in Kochi</span>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Chapter 02: The Parisian Apprenticeship (2018) -->
-  <section class="about-teaser reverse reveal">
-    <div class="at-img tilt">
-      <img src="images/kneading-dough.jpg" alt="Baker hand kneading sourdough artisan bread dough">
-      <div class="at-badge">81 <b>LAYERS</b> BUTTER</div>
-    </div>
-    <div class="at-copy">
-      <p class="kicker">CHAPTER 02 • THE EXPEDITION</p>
-      <h2>Crossing continents to master the geometry of French butter.</h2>
-      <p>
-        Two decades into our journey, our second-generation bakers travelled through traditional boulangeries and patisseries across Normandy, Paris, and Brittany. They immersed themselves in classical French viennoiserie—learning how 84% churned French butter behaves under precise 16°C temperature control, and how wild levain starters cultivate complex, honeycombed sourdough crumbs.
-      </p>
-      <p>
-        Instead of choosing between European patisserie and our Kerala snack heritage, we realized the greatest bakery in the world would celebrate both. We returned home, installed specialized stone-deck ovens alongside our traditional copper kadais, and unified both craft traditions under one roof.
-      </p>
-      <div class="at-points">
-        <span>🥐 81 Micro-Layers</span>
-        <span>❄️ 16°C Chilled Atelier</span>
-        <span>🌾 Wild Levain Starters</span>
-        <span>⏱️ 72-Hour Fermentation</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Behind the Scenes: The Three Sacred Kitchens -->
-  <section style="padding: 90px 4vw 40px; max-width: 1300px; margin: 0 auto;">
-    <div class="sec-head reveal">
-      <div>
-        <p class="kicker">BEHIND THE GLASS</p>
-        <h2>Our three sacred <em>kitchen ateliers.</em></h2>
-      </div>
-      <a href="menu.html" class="link-arrow magnetic">Explore What We Bake →</a>
-    </div>
-
-    <div class="exp-cards">
-      <div class="exp reveal tilt">
-        <b>🥟 01. The Kerala Kadai</b>
+      <div class="story-content">
+        <div class="stage-kicker"><span>CHAPTER 01</span></div>
+        <h2>A Charcoal Hearth &amp; <em>Tellicherry Pepper</em></h2>
         <p>
-          Fired for the iconic 4 PM tea-time rush. Hand-cut beef, chicken, egg, and vegetable puffs layered with crispy crusts; sweet unniyappam caramelized in brass appakarams; and ripe organic Nendran bananas sizzled in wood-pressed coconut oil.
+          In 1998, on a bustling corner near Kochi's Bakery Junction, Maannappam began with a single wood-fired brick oven and a family recipe for slow-braised beef and chicken puffs.
         </p>
-      </div>
-
-      <div class="exp reveal tilt">
-        <b>🥐 02. The Parisian Lamination Room</b>
         <p>
-          Chilled strictly to 16°C year-round. Our pastry artisans hand-fold imported 84% butter into slow-rested dough over three days, baking croissants, pain au chocolat, almond swirls, and fruit danishes fresh at 6:30 AM every morning.
-        </p>
-      </div>
-
-      <div class="exp reveal tilt">
-        <b>🥖 03. The Stone Hearth Deck</b>
-        <p>
-          Where raw flour meets glowing stone and high steam. Using our heirloom wild levain starter cultivated since 2012, rustic sourdough boules, French baguettes, and herb focaccia undergo a 72-hour slow cold fermentation with zero commercial improvers.
+          While conventional bakeries shifted toward industrial hydrogenated fats and commercial dough improvers, our founders insisted on rolling pastry by hand with pure butter, braising meat with fresh crushed Tellicherry pepper, and serving puffs piping hot when the 4 PM bell rang.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Ingredients Manifesto Section -->
-  <section style="padding: 60px 4vw 90px; max-width: 1300px; margin: 0 auto;">
-    <div class="sec-head reveal">
-      <div>
-        <p class="kicker">ZERO SHORTCUTS</p>
-        <h2>The ingredients <em>manifesto.</em></h2>
-      </div>
-    </div>
-
-    <div class="values">
-      <div class="value reveal tilt">
-        <b>🧈</b>
-        <h4>100% Real Butter &amp; Ghee</h4>
-        <p>We strictly prohibit vanaspati, hydrogenated palm fats, and synthetic shortening. Every single bake uses pure dairy butter and slow-simmered farm ghee.</p>
-      </div>
-
-      <div class="value reveal tilt">
-        <b>🌾</b>
-        <h4>Stone-Milled Ancient Grains</h4>
-        <p>No chemical bleaching agents or artificial bread improvers. We source single-origin stone-ground wheat, rye, and whole grains for rich flavor and natural digestion.</p>
+  <!-- Chapter 02: The Parisian Lamination Atelier -->
+  <section class="story-collage-section" style="padding-top:40px;">
+    <div class="story-grid" style="direction:rtl;">
+      <div class="story-visual-cluster" style="direction:ltr;">
+        <div class="story-main-img">
+          <img src="images/croissant.jpg" alt="Honeycomb butter croissant interior">
+        </div>
+        <div class="story-overlap-card">
+          <img src="images/kneading-dough.jpg" alt="Hand kneading artisan dough">
+        </div>
+        <div class="story-seal">
+          <b>16°C</b>
+          <span>Cold Atelier</span>
+        </div>
       </div>
 
-      <div class="value reveal tilt">
-        <b>🌶️</b>
-        <h4>Direct Highland Spices</h4>
-        <p>Sun-dried Tellicherry black peppercorns, crushed green Idukki cardamom, and Wayanad ginger sourced directly from Kerala family-owned spice estates.</p>
-      </div>
-
-      <div class="value reveal tilt">
-        <b>⏱️</b>
-        <h4>Time as an Essential Ingredient</h4>
-        <p>No rushed shortcuts. Our breads and laminated viennoiserie rest in temperature-controlled cold fermentation for up to 72 hours to unlock authentic flavor.</p>
+      <div class="story-content" style="direction:ltr;">
+        <div class="stage-kicker"><span>CHAPTER 02</span></div>
+        <h2>Normandy Cultured Butter &amp; <em>81 Micro-Layers</em></h2>
+        <p>
+          In 2012, second-generation baker Mathew returned from classic pastry apprenticeships in Normandy and Lyon with a bold aspiration: to introduce world-class European viennoiserie to Kerala without abandoning local soul.
+        </p>
+        <p>
+          We constructed our 16°C climate-controlled lamination room to work with high-butterfat cultured French butter. The result was a croissant that could rival the finest Parisian boulangeries—golden, shatteringly crisp outside, and delicately honeycombed within.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- Timeline Section -->
-  <section style="padding: 20px 4vw 80px; max-width: 1300px; margin: 0 auto;">
-    <div class="sec-head reveal">
+  <!-- Heritage Milestones Stack -->
+  <section class="section-stage">
+    <div class="stage-head" style="margin-bottom:30px;">
       <div>
-        <p class="kicker">OUR CHRONICLE</p>
-        <h2>28 years of <em>fire, flour, &amp; flavor.</em></h2>
+        <div class="stage-kicker">✨ TIMELINE OF CRAFT</div>
+        <h2 class="stage-title">From A Single Oven To A <em>Living Institution</em></h2>
       </div>
     </div>
 
-    <div class="timeline">
-      <div class="t-item reveal">
+    <div class="timeline-stack">
+      <div class="timeline-tile">
         <b>1998</b>
         <div>
-          <h4>The Wood-Fired Hearth in Kochi</h4>
-          <p>Founder opened Maannappam with a single brick oven, baking spiced egg puffs, coconut buns, and evening tea rolls for morning port workers and local families.</p>
+          <h4>The Wood-Fired Brick Oven Opens</h4>
+          <p>Founded at Bakery Junction, Kochi. The first batch of wood-fired Malabar meat puffs and tea cakes sells out in under 45 minutes.</p>
         </div>
       </div>
 
-      <div class="t-item reveal">
-        <b>2004</b>
+      <div class="timeline-tile">
+        <b>2008</b>
         <div>
-          <h4>The 4 PM Snack Bell Tradition</h4>
-          <p>The afternoon tea-time bell became a cherished local ritual. Neighborhoods gathered daily as hot meat puffs and golden pazhampori were pulled from the oven and kadai.</p>
+          <h4>The 4:00 PM Snack Bell Tradition</h4>
+          <p>The legendary afternoon snack bell is born, signaling freshly fired puffs, cutlets, and piping-hot tea for Kochi's commuters and regulars.</p>
         </div>
       </div>
 
-      <div class="t-item reveal">
-        <b>2012</b>
+      <div class="timeline-tile">
+        <b>2016</b>
         <div>
-          <h4>Cultivating the Wild Mother Levain</h4>
-          <p>Began cultivating our living sourdough culture using local whole wheat and mountain spring water, starting our journey into artisan wild fermentation.</p>
+          <h4>The 16°C French Lamination Room</h4>
+          <p>Commissioned an imported cold lamination atelier to craft authentic 81-layer croissants, pain au chocolat, and seasonal fruit danishes.</p>
         </div>
       </div>
 
-      <div class="t-item reveal">
-        <b>2018</b>
+      <div class="timeline-tile">
+        <b>Today</b>
         <div>
-          <h4>The European Boulangerie Apprenticeship</h4>
-          <p>Our bakers trained across Paris and Normandy, bringing back vintage French lamination techniques, stone deck ovens, and high-fat butter folding mastery.</p>
-        </div>
-      </div>
-
-      <div class="t-item reveal">
-        <b>2024</b>
-        <div>
-          <h4>Flagship Open-Concept Bakery &amp; Cafe</h4>
-          <p>Unveiled our Kochi flagship featuring glass-walled production ateliers where patrons watch French croissant sheeting and Kerala kadai frying in real-time.</p>
-        </div>
-      </div>
-
-      <div class="t-item reveal">
-        <b>2026</b>
-        <div>
-          <h4>Maannappam Today — 150+ Daily Bakes</h4>
-          <p>Serving over a thousand guests daily with 150+ artisanal items, remaining true to our founding principle: pure ingredients, zero shortcuts, and endless love for the craft.</p>
+          <h4>150+ Daily Bakes &amp; Heritage Sourdough</h4>
+          <p>Three living hearths firing from 4:30 AM to 10:00 PM every day, serving generations of families who cherish honest, handcrafted baking.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- The Artisan's Workshop (Gallery) -->
-  <section style="padding: 20px 4vw 80px; max-width: 1300px; margin: 0 auto;">
-    <div class="sec-head reveal">
+  <!-- Photo Craft Gallery -->
+  <section class="section-stage" style="padding-top:0;">
+    <div class="stage-head" style="margin-bottom:30px;">
       <div>
-        <p class="kicker">VISUAL CHRONICLE</p>
-        <h2>The rhythm of our <em>daily bakes.</em></h2>
+        <div class="stage-kicker">📸 ATELIER GLIMPSES</div>
+        <h2 class="stage-title">Moments Around <em>The Hearth</em></h2>
       </div>
     </div>
 
-    <div class="gallery reveal">
-      <img src="images/brick-oven-hd.jpg" alt="Wood-fired brick hearth oven at Maannappam">
-      <img src="images/kneading-dough.jpg" alt="Baker hand kneading artisan bread dough">
-      <img src="images/croissant.jpg" alt="Fresh golden honeycomb butter croissant">
-      <img src="images/meat-puff.jpg" alt="Crisp flaky meat puff hot from the oven">
-      <img src="images/sourdough-boule.jpg" alt="Crusty artisan sourdough boule">
-      <img src="images/pazhampori.jpg" alt="Golden Kerala banana fritters in pure coconut oil">
-      <img src="images/cutting-chai-1.jpg" alt="Freshly poured Kerala cutting chaya">
-      <img src="images/boulangerie-display.jpg" alt="Morning artisanal bread display on rustic shelves">
+    <div class="craft-gallery">
+      <img src="images/brick-oven-hd.jpg" alt="Artisan stone oven">
+      <img src="images/kneading-dough.jpg" alt="Hand kneading sourdough dough">
+      <img src="images/croissant.jpg" alt="Freshly baked golden croissant">
+      <img src="images/sourdough-boule.jpg" alt="Cooling sourdough country loaf">
     </div>
   </section>
 
-  <!-- Call To Action Banner -->
-  <section class="cta reveal">
-    <h2>smell the warm flour.</h2>
-    <p>Our ovens fire up at 6:30 AM every morning • Live afternoon snack rush at 4:00 PM • Warm dine-in seating</p>
+  <!-- Concierge CTA Banner -->
+  <section class="cinematic-cta">
+    <h2>Taste The Legacy in <em>Every Bite.</em></h2>
+    <p>
+      Whether you come for an afternoon meat puff fresh from the oven or a weekend brunch of croissants and pour-over coffee, our tables are ready for you.
+    </p>
     <div>
-      <a href="menu.html" class="btn btn-lime big magnetic">Explore Full Menu</a>
-      <a href="visit.html" class="btn btn-ghost big magnetic">Plan Your Visit</a>
+      <a href="visit.html" class="btn btn-amber big">Plan Your Visit &rarr;</a>
+      <a href="menu.html" class="btn btn-ghost big">Explore Daily Menu</a>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Architectural Footer -->
   <footer>
     <div class="foot-grid">
-      <div>
-        <h3>MAANNAPPAM<span>.</span></h3>
-        <p>Classic Snacks &amp; Global Patisserie.<br>Main Road, Bakery Junction, Kochi, Kerala 682016<br>orders@maannappam.in • +91 484 298 4411</p>
-      </div>
-      <div>
-        <b>Explore</b>
-        <a href="index.html">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="about.html">About Us</a>
-        <a href="visit.html">Visit Us</a>
-      </div>
-      <div>
-        <b>Bake Timings</b>
-        <p>Mon–Sun: 6:30 – 22:00<br>Morning Croissants: 6:30AM<br>Kerala Snack Rush: 4:00PM<br>Sourdough Deck: 7:30AM</p>
-      </div>
-      <div>
-        <b>Follow the Aroma</b>
-        <div class="socials">
-          <a href="#">IG</a>
-          <a href="#">FB</a>
-          <a href="#">YT</a>
-          <a href="#">WA</a>
+      <div class="foot-brand">
+        <h3>MAANNAPPAM <span>BAKERY</span></h3>
+        <p>
+          Independent artisanal bakery, hearth and cafe rooted in Kochi since 1998. Dedicated to authentic Kerala snacks, wild levain sourdough, and handcrafted French viennoiserie.
+        </p>
+        <div class="socials" style="margin-top:20px;">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="Twitter">TW</a>
         </div>
       </div>
+
+      <div class="foot-col">
+        <b>Navigation</b>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Daily Menu</a>
+        <a href="about.html">Our Heritage</a>
+        <a href="visit.html">Visit &amp; Hours</a>
+      </div>
+
+      <div class="foot-col">
+        <b>Ateliers</b>
+        <a href="menu.html">French Viennoiserie</a>
+        <a href="menu.html">Malabar Snack Oven</a>
+        <a href="menu.html">Wild Levain Breads</a>
+        <a href="menu.html">Chaya &amp; Brew Bar</a>
+      </div>
+
+      <div class="foot-col">
+        <b>Kochi Flagship</b>
+        <p>Bakery Junction, MG Road<br>Kochi, Kerala 682016</p>
+        <p style="margin-top:12px;"><b>Hours:</b><br>Daily 6:30 AM – 10:00 PM<br>Snack Bell: 4:00 PM</p>
+        <p style="margin-top:10px;"><a href="tel:+914842384910" style="color:var(--amber);">+91 484 238 4910</a></p>
+      </div>
     </div>
-    <p class="copy">© 2026 Maannappam Bakery &amp; Cafe. Handcrafted with love, pure butter, and time-tested recipes.</p>
+    <div class="copy">
+      &copy; 1998–2026 Maannappam Boulangerie &amp; Malabar Tea Bar. All rights reserved.
+    </div>
   </footer>
 
   <!-- GSAP & Scripts -->

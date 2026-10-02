@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visit Us — Maannappam Bakery &amp; Cafe | Kochi Flagship, Daily Bake Timings &amp; Directions</title>
+  <title>Visit Us &amp; Hours — Maannappam Bakery &amp; Cafe | Kochi Flagship</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,9 +14,10 @@
   <!-- Preloader -->
   <div id="preloader">
     <div class="loader-inner">
-      <div class="loader-cart">🥖</div>
-      <div class="loader-bar"><span></span></div>
-      <div class="loader-text">MAANNAPPAM <em>warming the hearth ovens for you…</em></div>
+      <div class="loader-emblem">🥐</div>
+      <div class="loader-title">MAANNAPPAM</div>
+      <div class="loader-track"><span></span></div>
+      <div class="loader-text"><em>warming the hearth for your visit…</em></div>
     </div>
   </div>
 
@@ -25,21 +26,33 @@
   <div class="cursor-ring"></div>
   <canvas id="grain"></canvas>
 
-  <!-- Navigation -->
+  <!-- Top Announcement Bar -->
+  <div class="top-ticker">
+    <div><b>DECK 02 ACTIVE @ 220°C:</b> Next Hot Malabar Snack Rush Tolls at 4:00 PM</div>
+    <div>Kochi Flagship, Bakery Junction • <a href="#inquiry">Reserve &rarr;</a></div>
+  </div>
+
+  <!-- Main Navigation Bar -->
   <header id="nav">
     <a href="index.html" class="logo">
-      <span class="logo-badge">M</span>
-      <span>MAANNAPPAM <small>BAKERY &amp; CAFE</small></span>
+      <div class="logo-badge">M</div>
+      <div class="logo-title">
+        <span>MAANNAPPAM</span>
+        <small>Boulangerie &amp; Tea Bar</small>
+      </div>
     </a>
     <nav class="links">
       <a href="index.html">Home</a>
-      <a href="menu.html">Menu</a>
-      <a href="about.html">About Us</a>
-      <a href="visit.html" class="active">Visit Us</a>
+      <a href="menu.html">Menu &amp; Catalog</a>
+      <a href="about.html">Our Heritage</a>
+      <a href="visit.html" class="active">Visit &amp; Hours</a>
     </nav>
-    <div class="nav-cta">
-      <span class="open-dot"></span> Fresh Bakes 6:30AM – 10PM 
-      <a href="#inquiry" class="btn btn-lime magnetic">Reserve / Order</a>
+    <div class="nav-actions">
+      <div class="live-pill">
+        <span class="live-dot"></span>
+        <span>Open 6:30 AM – 10 PM</span>
+      </div>
+      <a href="#inquiry" class="btn btn-amber">Reserve / Order</a>
     </div>
     <button id="burger" aria-label="Toggle Navigation">
       <span></span>
@@ -51,357 +64,210 @@
   <!-- Mobile Menu Overlay -->
   <div id="mobileMenu">
     <a href="index.html">Home</a>
-    <a href="menu.html">Menu</a>
-    <a href="about.html">About Us</a>
-    <a href="visit.html" class="active">Visit Us</a>
+    <a href="menu.html">Menu &amp; Catalog</a>
+    <a href="about.html">Our Heritage</a>
+    <a href="visit.html" class="active">Visit &amp; Hours</a>
   </div>
 
   <!-- Page Hero -->
-  <section class="page-hero">
-    <p class="kicker">PLAN YOUR VISIT — KOCHI FLAGSHIP &amp; CAFE</p>
-    <h1>Follow the aroma of<br><em>fresh bakes &amp; hot chai.</em></h1>
-    <p>Located right at Bakery Junction in Kochi. Step inside to witness our open-concept stone ovens, grab fresh warm snacks straight from the 4 PM bell, or unwind in our sunny cafe seating.</p>
+  <section class="subpage-hero">
+    <span class="hero-eyebrow">FLAGSHIP BOULANGERIE &amp; TEA SALON • KOCHI</span>
+    <h1>Step Inside Our <em>Hearth.</em></h1>
+    <p>
+      Located directly at Bakery Junction on MG Road in Kochi. Step inside to witness our open-concept stone deck ovens, catch fresh warm snacks straight from the 4 PM bell, or unwind in our warm cafe dining room.
+    </p>
   </section>
 
-  <!-- Daily Bake Schedule Strip -->
-  <div class="stat-strip reveal">
-    <div class="stat-box tilt">
-      <b>06:30 AM</b>
-      <span>Morning Croissants &amp; Danishes</span>
+  <!-- Visit Hub Grid: Schedule & Flagship Info -->
+  <div class="visit-hub-grid">
+    <!-- Tile 1: Daily Hearth Bake Schedule -->
+    <div class="visit-tile">
+      <span class="visit-badge">🔥 DAILY HEARTH SCHEDULE</span>
+      <h3>When Batches Pull Fresh</h3>
+      <p style="margin-bottom:20px;">
+        Every item is timed to ensure maximum flavor, shatter-crisp pastry crust, and warm crumb. Here is our daily oven schedule:
+      </p>
+
+      <div class="schedule-row">
+        <span><b>06:30 AM</b> • Morning Viennoiserie</span>
+        <span style="color:var(--amber);">Butter Croissants &amp; Pain au Chocolat</span>
+      </div>
+      <div class="schedule-row">
+        <span><b>07:30 AM</b> • Stone Hearth Breads</span>
+        <span style="color:var(--amber);">Sourdough Boules &amp; Baguettes</span>
+      </div>
+      <div class="schedule-row">
+        <span><b>11:30 AM</b> • Savory Lunch Pull</span>
+        <span style="color:var(--amber);">Rosemary Focaccia &amp; Brioche</span>
+      </div>
+      <div class="schedule-row" style="background:rgba(232,168,72,0.06); padding:13px 10px; border-radius:8px;">
+        <span><b>04:00 PM</b> • Snack Bell Rush 🔔</span>
+        <span style="color:var(--amber); font-weight:bold;">Hot Meat Puffs &amp; Pazhampori</span>
+      </div>
+      <div class="schedule-row">
+        <span><b>06:00 PM</b> • Evening Chaya &amp; Cakes</span>
+        <span style="color:var(--amber);">Samovar Chai &amp; Basque Cheesecake</span>
+      </div>
     </div>
-    <div class="stat-box tilt">
-      <b>07:30 AM</b>
-      <span>Sourdough Deck &amp; Baguettes</span>
-    </div>
-    <div class="stat-box tilt">
-      <b>04:00 PM</b>
-      <span>Kerala Snack Rush &amp; Hot Puffs</span>
-    </div>
-    <div class="stat-box tilt">
-      <b>06:00 PM</b>
-      <span>Evening Chai &amp; Warm Heritage Cakes</span>
+
+    <!-- Tile 2: Kochi Flagship & Concierge Info -->
+    <div class="visit-tile">
+      <span class="visit-badge">📍 FLAGSHIP LOCATION</span>
+      <h3>Kochi Flagship &amp; Cafe</h3>
+      <p style="margin-bottom:24px;">
+        Our flagship sits at the historic Bakery Junction in Kochi, welcoming diners, commuters, and weekend families with the aroma of freshly baking bread.
+      </p>
+
+      <div class="info-row">
+        <span>Address</span>
+        <div>Bakery Junction, MG Road, Kochi, Kerala 682016</div>
+      </div>
+      <div class="info-row">
+        <span>Hours</span>
+        <div>Daily 6:30 AM – 10:00 PM (Including Sundays &amp; Public Holidays)</div>
+      </div>
+      <div class="info-row">
+        <span>Phone</span>
+        <div><a href="tel:+914842384910" style="color:var(--amber); font-weight:700;">+91 484 238 4910</a></div>
+      </div>
+      <div class="info-row">
+        <span>Parking</span>
+        <div>Valet &amp; dedicated customer parking available behind the building.</div>
+      </div>
+      <div class="info-row">
+        <span>Seating</span>
+        <div>Indoor air-conditioned hearth salon + covered breezy veranda.</div>
+      </div>
     </div>
   </div>
 
-  <!-- Main Visit Cards Grid -->
-  <section class="visit-grid">
-    <!-- Card 1: Location & Contacts -->
-    <div class="v-card reveal tilt">
-      <div class="bake-badge">📍 PRIME CENTRAL LOCATION</div>
-      <h3>Bakery Junction Flagship</h3>
-      <p>
-        Situated along the historic Bakery Junction corridor in Kochi, connecting Kadavanthra and MG Road. Easy access with ample customer parking and close proximity to public transit.
-      </p>
-      
-      <div class="contact-row">
-        <span>Address:</span>
-        <div>Main Road, Bakery Junction, Kochi, Kerala 682016</div>
-      </div>
-      <div class="contact-row">
-        <span>Landmark:</span>
-        <div>Opposite Central Park • 250m from Metro Station (Exit B)</div>
-      </div>
-      <div class="contact-row">
-        <span>Phone:</span>
-        <div>+91 484 298 4411 / +91 484 298 4412</div>
-      </div>
-      <div class="contact-row">
-        <span>WhatsApp:</span>
-        <div>+91 98470 12345 (Express Pre-orders)</div>
-      </div>
-      <div class="contact-row">
-        <span>Email:</span>
-        <div>orders@maannappam.in</div>
-      </div>
-
-      <div class="v-links">
-        <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-lime magnetic">Open in Google Maps ↗</a>
-        <a href="tel:+914842984411" class="btn btn-ghost magnetic">Call Front Desk</a>
-      </div>
-    </div>
-
-    <!-- Card 2: Operating & Bake Hours -->
-    <div class="v-card reveal tilt">
-      <div class="bake-badge">🔥 OVENS ACTIVE ALL DAY</div>
-      <h3>Opening &amp; Bake Hours</h3>
-      <p>
-        Our bakers arrive at 4:30 AM to fire the stone hearths. Fresh bakes rotate continuously from early morning through late evening.
-      </p>
-
-      <div class="hours-row">
-        <span>Monday – Friday</span>
-        <b>6:30 AM – 10:00 PM</b>
-      </div>
-      <div class="hours-row">
-        <span>Saturday &amp; Sunday</span>
-        <b>6:30 AM – 10:30 PM</b>
-      </div>
-      <div class="hours-row">
-        <span>Morning Viennoiserie Pull</span>
-        <b>6:30 AM Sharp</b>
-      </div>
-      <div class="hours-row">
-        <span>Sourdough Deck Loaves</span>
-        <b>7:30 AM Daily</b>
-      </div>
-      <div class="hours-row">
-        <span>The 4 PM Hot Snack Rush</span>
-        <b>4:00 PM – 7:30 PM</b>
-      </div>
-      <div class="hours-row">
-        <span>Chaya &amp; Brew Bar</span>
-        <b>Continuous 6:30 AM – Close</b>
-      </div>
-
-      <p style="margin-top: 20px; font-size: 13.5px; opacity: 0.7;">
-        💡 <em>Pro Tip:</em> Our meat puffs, egg puffs, and banana fritters fly off the trays during the 4:00 PM tea rush. We recommend arriving around 3:50 PM for the freshest batch!
-      </p>
-    </div>
-
-    <!-- Card 3: Cafe Experience & Seating -->
-    <div class="v-card reveal tilt">
-      <div class="bake-badge">☕ DINE-IN &amp; TAKEAWAY</div>
-      <h3>The Cafe Experience</h3>
-      <p>
-        A comfortable sanctuary designed for lingering conversations, morning reading, or afternoon tea reunions.
-      </p>
-
-      <div class="contact-row">
-        <span>Indoor:</span>
-        <div>Air-conditioned cafe hall with cozy banquette seating and warm wood tables.</div>
-      </div>
-      <div class="contact-row">
-        <span>Veranda:</span>
-        <div>Shaded outdoor garden veranda catching the coastal breeze.</div>
-      </div>
-      <div class="contact-row">
-        <span>Live Ateliers:</span>
-        <div>Glass-walled viewing gallery to observe French butter lamination and sourdough scoring.</div>
-      </div>
-      <div class="contact-row">
-        <span>Amenities:</span>
-        <div>Complimentary high-speed Wi-Fi, power outlets at booth tables, and wheelchair ramp access.</div>
-      </div>
-
-      <div class="v-links">
-        <a href="menu.html" class="btn btn-lime magnetic">View Dine-In Menu →</a>
-      </div>
-    </div>
-
-    <!-- Card 4: Parking & Transit Guide -->
-    <div class="v-card reveal tilt">
-      <div class="bake-badge">🚗 EFFORTLESS TRANSIT</div>
-      <h3>Parking &amp; Commute</h3>
-      <p>
-        Conveniently situated with direct roadway access and dedicated vehicle bays for stress-free visits.
-      </p>
-
-      <div class="contact-row">
-        <span>Car Parking:</span>
-        <div>Dedicated customer parking in front of the bakery for 25+ cars with evening valet assistance.</div>
-      </div>
-      <div class="contact-row">
-        <span>Two-Wheelers:</span>
-        <div>Spacious shaded parking bays for bikes and scooters.</div>
-      </div>
-      <div class="contact-row">
-        <span>Metro Transit:</span>
-        <div>Just 250 meters from Bakery Junction Metro Station (3-minute leisurely walk).</div>
-      </div>
-      <div class="contact-row">
-        <span>Bus Access:</span>
-        <div>Bakery Junction Bus Stop is directly across the avenue.</div>
-      </div>
-
-      <div class="v-links">
-        <a href="#inquiry" class="btn btn-ghost magnetic">Request Group Seating</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Atmosphere / Showcase Teaser -->
-  <section class="about-teaser reveal">
-    <div class="at-img tilt">
-      <img src="images/boulangerie-display.jpg" alt="Artisan bread display at Maannappam Bakery">
-      <div class="at-badge">FRESH <b>EVERY</b> DAY</div>
-    </div>
-    <div class="at-copy">
-      <p class="kicker">AN OPEN SENSORY WORKSHOP</p>
-      <h2>Smell the woodsmoke, hear the crust shatter, taste the craft.</h2>
-      <p>
-        We designed Maannappam so you never feel separated from the fire. As you walk through our doors, the rich aroma of caramelized French butter, fresh stone-ground dough, and roasted Tellicherry spices fills the air.
-      </p>
-      <p>
-        Our master bakers and baristas work in full view behind gleaming glass ateliers. Stop by to take home a warm loaf of seeded sourdough, sit down for a quick cutting chai with hot meat puffs, or box up French macarons for tonight's dinner party.
-      </p>
-      <div class="at-points">
-        <span>🥐 Open Baking Ateliers</span>
-        <span>☕ Fresh Meter-Poured Chai</span>
-        <span>🌿 Shaded Veranda</span>
-        <span>🥖 Loaves Sliced on Request</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interactive Reservation & Pre-Order Inquiry Form -->
-  <section class="inquiry-wrap" id="inquiry">
-    <div class="inquiry-box reveal">
-      <div class="inquiry-info">
-        <p class="kicker">PRE-ORDERS &amp; SEATING</p>
-        <h3>Reserve a table or place a party order.</h3>
+  <!-- Interactive Table Reservation & Pre-Order Form -->
+  <div class="booking-wrap" id="inquiry">
+    <div class="booking-card">
+      <div class="booking-info">
+        <span class="hero-eyebrow">HOSPITALITY CONCIERGE</span>
+        <h3>Reserve A Table At The <em>Hearth.</em></h3>
         <p>
-          Planning a family tea party, corporate afternoon snack box, or craving a custom whole cake? Send us a quick note and our front desk team will confirm your order within 30 minutes.
+          Planning a breakfast meeting, afternoon 4 PM snack gathering, or pre-ordering celebratory cakes and sourdough boules? Let us know in advance and we will have everything prepared.
         </p>
-
-        <div class="contact-row">
-          <span>Direct Line:</span>
-          <div>+91 484 298 4411</div>
-        </div>
-        <div class="contact-row">
-          <span>WhatsApp:</span>
-          <div>+91 98470 12345</div>
-        </div>
-        <div class="contact-row">
-          <span>Lead Time:</span>
-          <div>Party boxes (20+ items) require 24 hours advance notice.</div>
+        <div style="background:rgba(232,168,72,0.08); border-left:3px solid var(--amber); padding:14px 18px; border-radius:0 12px 12px 0; margin-top:20px;">
+          <b style="color:var(--amber); font-size:13px; text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:4px;">Baker's Tip:</b>
+          <span style="color:var(--cream-soft); font-size:14px; line-height:1.5;">
+            The 4:00 PM Snack Bell Rush is our most sought-after hour. Book 24 hours ahead for groups of 4 or more!
+          </span>
         </div>
       </div>
 
-      <form id="visitForm" onsubmit="event.preventDefault(); handleFormSubmit();">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">Your Name *</label>
-            <input type="text" id="name" required placeholder="e.g. Rahul Menon">
+      <form id="reservationForm">
+        <div class="form-split">
+          <div class="form-field">
+            <label for="resName">Your Full Name</label>
+            <input type="text" id="resName" name="name" placeholder="e.g. Rahul Varma" required>
           </div>
-          <div class="form-group">
-            <label for="phone">Phone / WhatsApp *</label>
-            <input type="tel" id="phone" required placeholder="+91 98765 43210">
+          <div class="form-field">
+            <label for="resPhone">Phone Number</label>
+            <input type="tel" id="resPhone" name="phone" placeholder="+91 98470 XXXXX" required>
           </div>
         </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label for="type">Order / Visit Type</label>
-            <select id="type">
-              <option value="table">Cafe Table Reservation</option>
-              <option value="snacks">Party Snack Box (Puffs, Cutlets, Samosas)</option>
-              <option value="cake">Custom Celebration / Plum Cake</option>
-              <option value="sourdough">Sourdough Loaf Weekly Reserve</option>
-              <option value="other">General Question</option>
+        <div class="form-split">
+          <div class="form-field">
+            <label for="resDate">Reservation Date</label>
+            <input type="date" id="resDate" name="date" required>
+          </div>
+          <div class="form-field">
+            <label for="resSlot">Desired Slot</label>
+            <select id="resSlot" name="slot" required>
+              <option value="" disabled selected>Select a time window</option>
+              <option value="morning">Morning Breakfast (7:00 AM – 10:30 AM)</option>
+              <option value="lunch">Lunch &amp; Breads (12:00 PM – 2:30 PM)</option>
+              <option value="snack-bell">4:00 PM Kerala Snack Bell Rush 🔥</option>
+              <option value="evening">Evening Cafe &amp; Desserts (6:00 PM – 9:30 PM)</option>
             </select>
           </div>
-          <div class="form-group">
-            <label for="datetime">Preferred Date &amp; Time</label>
-            <input type="text" id="datetime" placeholder="e.g. Saturday @ 4:00 PM">
-          </div>
         </div>
 
-        <div class="form-group">
-          <label for="notes">Details or Special Requests</label>
-          <textarea id="notes" placeholder="Tell us how many guests, snack quantities, or dietary preferences…"></textarea>
+        <div class="form-field">
+          <label for="resGuests">Number of Guests</label>
+          <select id="resGuests" name="guests" required>
+            <option value="1">1 Guest</option>
+            <option value="2" selected>2 Guests</option>
+            <option value="3-4">3 to 4 Guests</option>
+            <option value="5-8">5 to 8 Guests</option>
+            <option value="large">Large Party (9+ Guests)</option>
+          </select>
         </div>
 
-        <button type="submit" class="btn btn-lime big magnetic" style="width: 100%;">Send Reservation Request →</button>
-        <div id="formSuccess" style="display: none; margin-top: 16px; padding: 14px; background: rgba(200, 243, 29, 0.15); border: 1px solid var(--lime); border-radius: 12px; color: var(--lime); font-size: 14.5px; text-align: center; font-weight: 700;">
-          ✨ Thank you! We received your request and our bakery counter will call / WhatsApp you shortly to confirm.
+        <div class="form-field">
+          <label for="resNotes">Special Requests or Cake / Bread Pre-Orders</label>
+          <textarea id="resNotes" name="notes" placeholder="Tell us if you'd like us to hold specific sourdough boules, celebration cakes, or high chairs..."></textarea>
         </div>
+
+        <button type="submit" class="btn btn-amber big" style="width:100%; margin-top:8px;">
+          <span>Confirm Hearth Reservation &rarr;</span>
+        </button>
       </form>
     </div>
-  </section>
+  </div>
 
-  <!-- Visitor FAQs Section -->
-  <section style="padding: 20px 4vw 90px; max-width: 1300px; margin: 0 auto;">
-    <div class="sec-head reveal">
-      <div>
-        <p class="kicker">HELPFUL VISITOR INFO</p>
-        <h2>Frequently asked <em>questions.</em></h2>
-      </div>
-    </div>
-
-    <div class="faq-grid">
-      <div class="faq-card reveal tilt">
-        <h4>When is the best time to get hot Kerala puffs?</h4>
-        <p>
-          Our puffs come out blisteringly hot from the ovens at 4:00 PM and again at 6:00 PM every day. Trays sell out quickly, so arriving around 3:50 PM guarantees you get them at peak flaky crispness straight from the baking trays.
-        </p>
-      </div>
-
-      <div class="faq-card reveal tilt">
-        <h4>Do you use vanaspati or artificial food colors?</h4>
-        <p>
-          Never. We enforce a strict zero-vanaspati policy across our entire bakery. All our items are made exclusively with 100% pure butter, slow-simmered farm ghee, cold-pressed coconut oil, and natural spices and extracts.
-        </p>
-      </div>
-
-      <div class="faq-card reveal tilt">
-        <h4>Can I pre-order snack boxes or custom celebration cakes?</h4>
-        <p>
-          Yes! We prepare custom snack boxes (assorted puffs, cutlets, unniyappam, and rolls) for office events, family gatherings, and weddings. For large party orders (20+ items), please give us 24 hours notice.
-        </p>
-      </div>
-
-      <div class="faq-card reveal tilt">
-        <h4>Can you slice my sourdough loaves on-site?</h4>
-        <p>
-          Absolutely. Our front counter has precision bread slicers and we can slice your sourdough boule or seeded loaves to your preferred sandwich or toast thickness at no additional charge.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Call To Action Banner -->
-  <section class="cta reveal">
-    <h2>see you at the counter.</h2>
-    <p>Ovens hot every day 6:30 AM – 10:00 PM • Bakery Junction, Kochi • Dine-in &amp; Takeaway</p>
+  <!-- Concierge CTA Banner -->
+  <section class="cinematic-cta">
+    <h2>We Look Forward To <em>Welcoming You.</em></h2>
+    <p>
+      Step into the aroma of toasted butter, bubbling coconut oil, and wild levain. Fresh from our stone ovens to your table.
+    </p>
     <div>
-      <a href="menu.html" class="btn btn-lime big magnetic">Browse Full Menu</a>
-      <a href="#inquiry" class="btn btn-ghost big magnetic">Reserve Your Table</a>
+      <a href="menu.html" class="btn btn-amber big">Explore 34-Item Catalog &rarr;</a>
+      <a href="index.html" class="btn btn-ghost big">Back to Home</a>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Architectural Footer -->
   <footer>
     <div class="foot-grid">
-      <div>
-        <h3>MAANNAPPAM<span>.</span></h3>
-        <p>Classic Snacks &amp; Global Patisserie.<br>Main Road, Bakery Junction, Kochi, Kerala 682016<br>orders@maannappam.in • +91 484 298 4411</p>
-      </div>
-      <div>
-        <b>Explore</b>
-        <a href="index.html">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="about.html">About Us</a>
-        <a href="visit.html">Visit Us</a>
-      </div>
-      <div>
-        <b>Bake Timings</b>
-        <p>Mon–Sun: 6:30 – 22:00<br>Morning Croissants: 6:30AM<br>Kerala Snack Rush: 4:00PM<br>Sourdough Deck: 7:30AM</p>
-      </div>
-      <div>
-        <b>Follow the Aroma</b>
-        <div class="socials">
-          <a href="#">IG</a>
-          <a href="#">FB</a>
-          <a href="#">YT</a>
-          <a href="#">WA</a>
+      <div class="foot-brand">
+        <h3>MAANNAPPAM <span>BAKERY</span></h3>
+        <p>
+          Independent artisanal bakery, hearth and cafe rooted in Kochi since 1998. Dedicated to authentic Kerala snacks, wild levain sourdough, and handcrafted French viennoiserie.
+        </p>
+        <div class="socials" style="margin-top:20px;">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="Twitter">TW</a>
         </div>
       </div>
+
+      <div class="foot-col">
+        <b>Navigation</b>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Daily Menu</a>
+        <a href="about.html">Our Heritage</a>
+        <a href="visit.html">Visit &amp; Hours</a>
+      </div>
+
+      <div class="foot-col">
+        <b>Ateliers</b>
+        <a href="menu.html">French Viennoiserie</a>
+        <a href="menu.html">Malabar Snack Oven</a>
+        <a href="menu.html">Wild Levain Breads</a>
+        <a href="menu.html">Chaya &amp; Brew Bar</a>
+      </div>
+
+      <div class="foot-col">
+        <b>Kochi Flagship</b>
+        <p>Bakery Junction, MG Road<br>Kochi, Kerala 682016</p>
+        <p style="margin-top:12px;"><b>Hours:</b><br>Daily 6:30 AM – 10:00 PM<br>Snack Bell: 4:00 PM</p>
+        <p style="margin-top:10px;"><a href="tel:+914842384910" style="color:var(--amber);">+91 484 238 4910</a></p>
+      </div>
     </div>
-    <p class="copy">© 2026 Maannappam Bakery &amp; Cafe. Handcrafted with love, pure butter, and time-tested recipes.</p>
+    <div class="copy">
+      &copy; 1998–2026 Maannappam Boulangerie &amp; Malabar Tea Bar. All rights reserved.
+    </div>
   </footer>
 
   <!-- GSAP & Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="js/main.js"></script>
-  <script>
-    function handleFormSubmit() {
-      const success = document.getElementById('formSuccess');
-      if (success) {
-        success.style.display = 'block';
-        document.getElementById('visitForm').reset();
-      }
-    }
-  </script>
 </body>
 </html>
