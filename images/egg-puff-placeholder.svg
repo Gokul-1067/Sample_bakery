@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141710"/>
+      <stop offset="100%" stop-color="#1e2216"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c8f31d"/>
+      <stop offset="100%" stop-color="#ff9900"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bgGrad)"/>
+  <rect x="25" y="25" width="750" height="400" rx="16" fill="none" stroke="rgba(200,243,29,0.25)" stroke-width="2" stroke-dasharray="6,6"/>
+  
+  <!-- Icon & Flourish -->
+  <g transform="translate(400, 160)" text-anchor="middle">
+    <circle cx="0" cy="0" r="52" fill="rgba(200,243,29,0.08)" stroke="#c8f31d" stroke-width="2"/>
+    <text x="0" y="16" font-size="44" text-anchor="middle">🥟</text>
+  </g>
+  
+  <!-- Typography -->
+  <text x="400" y="265" font-family="'Fraunces', Georgia, serif" font-size="28" font-weight="900" fill="#f7f3ea" text-anchor="middle" letter-spacing="1">TRADITIONAL EGG PUFF</text>
+  <text x="400" y="300" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="13" font-weight="700" fill="#c8f31d" text-anchor="middle" letter-spacing="3">AUTHENTIC KERALA HEARTH RECIPE</text>
+  <text x="400" y="340" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="12" fill="rgba(247,243,234,0.6)" text-anchor="middle">Exact photo update in progress • Tray fresh daily at 4:00 PM</text>
+</svg>
+

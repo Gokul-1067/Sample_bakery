@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — Maannappam Bakery &amp; Cafe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,900;1,9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥐</text></svg>">
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-inner">
+      <div class="loader-cart">🥖</div>
+      <div class="loader-bar"><span></span></div>
+      <div class="loader-text">MAANNAPPAM <em>stocking fresh trays…</em></div>
+    </div>
+  </div>
+
+  <!-- Magnetic Cursor & Grain Overlay -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+  <canvas id="grain"></canvas>
+
+  <!-- Navigation -->
+  <header id="nav">
+    <a href="index.html" class="logo">
+      <span class="logo-badge">M</span>
+      <span>MAANNAPPAM <small>BAKERY &amp; CAFE</small></span>
+    </a>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="menu.html" class="active">Menu</a>
+      <a href="about.html">About Us</a>
+      <a href="visit.html">Visit Us</a>
+    </nav>
+    <div class="nav-cta">
+      <span class="open-dot"></span> Fresh Bakes 6:30AM – 10PM 
+      <a href="visit.html" class="btn btn-lime magnetic">Find Bakery</a>
+    </div>
+    <button id="burger" aria-label="Toggle Navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About Us</a>
+    <a href="visit.html">Visit Us</a>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <p class="kicker">MENU — 150+ FRESH ITEMS DAILY</p>
+    <h1>Pick your <em>counter.</em><br>Lose track of time.</h1>
+    <p>Showcase of our live deck ovens, copper kadais, and chilled patisserie. Come touch, smell and taste in person — from hot Kerala meat puffs to 81-layer French croissants.</p>
+  </section>
+
+  <!-- Category Sticky Navigation -->
+  <nav class="cat-nav">
+    <button class="active" data-target="#classic">🥟 Classic Kerala Snacks</button>
+    <button data-target="#viennoiserie">🥐 Viennoiserie &amp; Croissants</button>
+    <button data-target="#breads">🥖 Sourdough &amp; Hearth</button>
+    <button data-target="#patisserie">🍰 World Patisserie</button>
+    <button data-target="#cakes">🎂 Heritage Cakes &amp; Sweets</button>
+    <button data-target="#brews">☕ Chaya &amp; Brew Bar</button>
+  </nav>
+
+  <!-- Section 01: Classic Kerala Snacks -->
+  <section class="cat-section" id="classic">
+    <div class="cat-head reveal">
+      <span class="cat-num">01</span>
+      <div>
+        <h2>Classic Desi Snacks</h2>
+        <p>Puffs hot at 4PM • Nadan Pazhampori in coconut oil • Beef cutlets • Unniyappam fresh from the mold.</p>
+      </div>
+    </div>
+    <div class="shelf">
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge">HOT @ 4PM</span>
+          <img src="images/meat-puff.jpg" alt="Meat Puff">
+        </div>
+        <div class="info">
+          <h4>Meat Puff</h4>
+          <small>Flaky layered puff pastry stuffed with spicy minced meat, black pepper &amp; curry leaves</small>
+          <span class="aisle">Counter 01 • Hot Snacks</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge">ALL-TIME FAVE</span>
+          <img src="images/egg-puff.jpg" alt="Egg Puff">
+        </div>
+        <div class="info">
+          <h4>Egg Puff</h4>
+          <small>Whole farm egg roasted in caramelized onion, fennel, and ginger masala inside flaky puff layers</small>
+          <span class="aisle">Counter 01 • Hot Snacks</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge green">PURE COCONUT OIL</span>
+          <img src="images/pazhampori.jpg" alt="Nadan Pazhampori">
+        </div>
+        <div class="info">
+          <h4>Nadan Pazhampori</h4>
+          <small>Ripe Palakkad Nendran bananas fried live in wood-pressed coconut oil</small>
+          <span class="aisle">Counter 01 • Live Kadai</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge dark">CRUMB COATED</span>
+          <img src="images/chicken-cutlet.jpg" alt="Kerala Chicken Cutlet">
+        </div>
+        <div class="info">
+          <h4>Kerala Chicken Cutlet</h4>
+          <small>Crushed pepper chicken &amp; potato patty rolled in house toast crumbs, mint dip</small>
+          <span class="aisle">Counter 01 • Hot Snacks</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge green">GHEE ROASTED</span>
+          <img src="images/unniyappam.jpg" alt="Unniyappam &amp; Neyyappam">
+        </div>
+        <div class="info">
+          <h4>Unniyappam &amp; Neyyappam</h4>
+          <small>Steamed &amp; bronze-fried with roasted coconut bits, cardamom and organic jaggery</small>
+          <span class="aisle">Counter 01 • Traditional Sweets</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge">CRISPY POTATO &amp; PEAS</span>
+          <img src="images/samosa.jpg" alt="Crunchy Veg Samosa &amp; Roll">
+        </div>
+        <div class="info">
+          <h4>Crunchy Veg Samosa &amp; Roll</h4>
+          <small>Crisp pastry envelope filled with spiced potato, cabbage, carrot &amp; coriander</small>
+          <span class="aisle">Counter 01 • Veg Specials</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 02: European Viennoiserie & Croissants -->
+  <section class="cat-section" id="viennoiserie">
+    <div class="cat-head reveal">
+      <span class="cat-num">02</span>
+      <div>
+        <h2>European Viennoiserie</h2>
+        <p>100% French Butter • 72-hour cold proofing • Honeycomb interior • Flakes that shatter.</p>
+      </div>
+    </div>
+    <div class="shelf">
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge">81 LAYERS</span>
+          <img src="images/croissant.jpg" alt="Classic French Croissant">
+        </div>
+        <div class="info">
+          <h4>Classic French Croissant</h4>
+          <small>Pure Normandy butter, crisp laminated golden exterior, airy featherweight interior</small>
+          <span class="aisle">Counter 02 • Morning Batch 6:30AM</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge">CALLEBAUT 70%</span>
+          <img src="images/pain-au-chocolat.jpg" alt="Pain au Chocolat">
+        </div>
+        <div class="info">
+          <h4>Pain au Chocolat</h4>
+          <small>Double batons of Belgian dark chocolate encased in buttery, flaky puff brioche</small>
+          <span class="aisle">Counter 02 • Viennoiserie</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge green">CHEF'S SIGNATURE</span>
+          <img src="images/almond-croissant.jpg" alt="Almond Frangipane Croissant">
+        </div>
+        <div class="info">
+          <h4>Almond Frangipane Croissant</h4>
+          <small>Twice-baked croissant filled with almond cream, topped with toasted sliced almonds</small>
+          <span class="aisle">Counter 02 • Viennoiserie</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge">WILD SPICE</span>
+          <img src="images/cinnamon-roll.jpg" alt="Cardamom Cinnamon Swirl">
+        </div>
+        <div class="info">
+          <h4>Cardamom Cinnamon Brioche Swirl</h4>
+          <small>Slow-fermented brioche rolled with Ceylon cinnamon and fresh Wayanad green cardamom</small>
+          <span class="aisle">Counter 02 • Sweet Buns</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge green">BERRY FRESH</span>
+          <img src="images/berry-danish.jpg" alt="Vanilla Custard &amp; Berry Danish">
+        </div>
+        <div class="info">
+          <h4>Vanilla Custard &amp; Berry Danish</h4>
+          <small>Madagascar bourbon vanilla custard nest crowned with fresh blueberries and raspberries</small>
+          <span class="aisle">Counter 02 • Viennoiserie</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge dark">SAVORY PUFF</span>
+          <img src="images/cheese-croissant.jpg" alt="Gruyère Cheese &amp; Herb Croissant">
+        </div>
+        <div class="info">
+          <h4>Gruyère Cheese &amp; Herb Croissant</h4>
+          <small>Melted aged Swiss Gruyère with thyme and black pepper butter lamination</small>
+          <span class="aisle">Counter 02 • Savory Viennoiserie</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 03: Sourdough & Hearth Breads -->
+  <section class="cat-section" id="breads">
+    <div class="cat-head reveal">
+      <span class="cat-num">03</span>
+      <div>
+        <h2>Artisan Sourdough &amp; Hearth Breads</h2>
+        <p>Stone-ground heirloom flours • Natural wild levain • Blistered crusts • No commercial yeast.</p>
+      </div>
+    </div>
+    <div class="shelf">
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge">48-HR FERMENT</span>
+          <img src="images/sourdough-boule.jpg" alt="Country Sourdough Boule">
+        </div>
+        <div class="info">
+          <h4>Country Blonde Sourdough Boule</h4>
+          <small>Stone-hearth baked with crackling blistered ear, custard-like open crumb, gentle tang</small>
+          <span class="aisle">Hearth Shelf • Deck Ovens</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge">BAKED @ 7AM</span>
+          <img src="images/french-baguette.jpg" alt="Traditional French Baguette">
+        </div>
+        <div class="info">
+          <h4>Traditional French Baguette</h4>
+          <small>Long cold fermentation, singing crust, open aeration, perfect for cheese &amp; butter</small>
+          <span class="aisle">Hearth Shelf • Daily Breads</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge green">HEIRLOOM GRAIN</span>
+          <img src="images/seeded-bread.jpg" alt="Seeded Multigrain Rye">
+        </div>
+        <div class="info">
+          <h4>Seeded Multigrain Rye</h4>
+          <small>Rye and whole wheat sourdough packed with toasted pumpkin, flax, and sesame seeds</small>
+          <span class="aisle">Hearth Shelf • Healthy Loaves</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge">EVERYDAY FAVOURITE</span>
+          <img src="images/milk-bread.jpg" alt="Japanese Milk Bread">
+        </div>
+        <div class="info">
+          <h4>Japanese Milk Bread Loaf (Shokupan)</h4>
+          <small>Tangzhong method milk bread — ultra fluffy, pillow-soft, perfect for toast and sandwiches</small>
+          <span class="aisle">Hearth Shelf • Daily Loaves</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge dark">ROSEMARY &amp; SEA SALT</span>
+          <img src="images/rosemary-focaccia.jpg" alt="Rosemary Focaccia">
+        </div>
+        <div class="info">
+          <h4>Roasted Garlic &amp; Rosemary Focaccia</h4>
+          <small>Dimpled dough bathed in cold-pressed extra virgin olive oil, confit garlic &amp; sea salt</small>
+          <span class="aisle">Hearth Shelf • Italian Hearth</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge green">FRENCH BRIOCHE</span>
+          <img src="images/brioche.jpg" alt="Golden Brioche Loaf">
+        </div>
+        <div class="info">
+          <h4>Golden Brioche Loaf &amp; Buns</h4>
+          <small>Egg-washed, rich French butter brioche with tender shred and golden toasted glaze</small>
+          <span class="aisle">Hearth Shelf • Brioche</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 04: World Patisserie -->
+  <section class="cat-section" id="patisserie">
+    <div class="cat-head reveal">
+      <span class="cat-num">04</span>
+      <div>
+        <h2>World Patisserie &amp; Desserts</h2>
+        <p>Parisian Choux • Basque cheesecakes • Fruit tarts • Delicate handmade macarons.</p>
+      </div>
+    </div>
+    <div class="shelf">
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge">PARISIAN CLASSIC</span>
+          <img src="images/chocolate-eclair.jpg" alt="Dark Chocolate Eclair">
+        </div>
+        <div class="info">
+          <h4>Dark Chocolate Ganache Eclair</h4>
+          <small>Crisp choux pastry shell filled with silky chocolate crème pâtissière, glossy mirror glaze</small>
+          <span class="aisle">Glass Counter • Chilled</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge">CARAMELIZED TOP</span>
+          <img src="images/cheesecake.jpg" alt="Basque Cheesecake">
+        </div>
+        <div class="info">
+          <h4>San Sebastián Baked Cheesecake</h4>
+          <small>Baked hot for a rich caramelized golden exterior and velvety cream cheese center</small>
+          <span class="aisle">Glass Counter • Cheesecakes</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge green">BERRY TART</span>
+          <img src="images/strawberry-tart.jpg" alt="Strawberry Sablé Tartlet">
+        </div>
+        <div class="info">
+          <h4>Strawberry Sablé Tartlet</h4>
+          <small>Buttery crisp sablé biscuit base with delicate fruit preserve and sweet glaze</small>
+          <span class="aisle">Glass Counter • Tarts</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge">BOX OF 6</span>
+          <img src="images/macarons.jpg" alt="French Macarons Box">
+        </div>
+        <div class="info">
+          <h4>Artisan Macaron Box (6 Flavors)</h4>
+          <small>Pistachio, salted caramel, Valrhona dark chocolate, raspberry rose, passionfruit, vanilla</small>
+          <span class="aisle">Glass Counter • Gift Boxes</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge dark">ESPRESSO SOAKED</span>
+          <img src="images/tiramisu.jpg" alt="Classic Italian Tiramisu">
+        </div>
+        <div class="info">
+          <h4>Classic Italian Tiramisu Cup</h4>
+          <small>Savoiardi ladyfingers soaked in dark roast espresso, layered with whipped mascarpone</small>
+          <span class="aisle">Glass Counter • Desserts</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge green">TROPICAL</span>
+          <img src="images/mango-mousse.jpg" alt="Mango &amp; Passionfruit Mousse">
+        </div>
+        <div class="info">
+          <h4>Mango &amp; Passionfruit Mousse Cake</h4>
+          <small>Light sponge layered with Alphonso mango curd and tart passionfruit glaze</small>
+          <span class="aisle">Glass Counter • Fruit Patisserie</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 05: Heritage Cakes & Sweets -->
+  <section class="cat-section" id="cakes">
+    <div class="cat-head reveal">
+      <span class="cat-num">05</span>
+      <div>
+        <h2>Heritage Cakes &amp; Sweets</h2>
+        <p>Rum-soaked Kochi plum cake • Authentic Calicut ghee halwa • Tea-time butter cakes.</p>
+      </div>
+    </div>
+    <div class="shelf">
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge">ORIGINAL 1998</span>
+          <img src="images/plum-cake.jpg" alt="Kochi Heritage Plum Cake">
+        </div>
+        <div class="info">
+          <h4>Kochi Heritage Plum Cake</h4>
+          <small>Dark, rich cake packed with dry fruits macerated for 6 months in rum and warm Kerala spices</small>
+          <span class="aisle">Tradition Shelf • Heritage Bakes</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge green">PURE GHEE</span>
+          <img src="images/kerala-halwa.jpg" alt="Calicut Black Halwa">
+        </div>
+        <div class="info">
+          <h4>Calicut Ghee Halwa</h4>
+          <small>Slow-stirred in heavy copper uruli with pure coconut milk, farm ghee, and roasted cashews</small>
+          <span class="aisle">Tradition Shelf • Halwa Special</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge">TEA-TIME NOSTALGIA</span>
+          <img src="images/marble-cake.jpg" alt="Old-School Marble Butter Cake">
+        </div>
+        <div class="info">
+          <h4>Old-School Marble Butter Cake</h4>
+          <small>Nostalgic vanilla and chocolate ribbon cake made with farm butter, best with evening chaya</small>
+          <span class="aisle">Tradition Shelf • Tea Bakes</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge dark">CELEBRATION SPECIAL</span>
+          <img src="images/chocolate-cake.jpg" alt="Belgian Truffle Birthday Cake">
+        </div>
+        <div class="info">
+          <h4>Belgian Truffle Celebration Cake (1kg)</h4>
+          <small>Moist dark chocolate sponge coated in 54% dark chocolate truffle and cocoa nibs</small>
+          <span class="aisle">Tradition Shelf • Celebration Cakes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 06: Chaya & Brew Bar -->
+  <section class="cat-section" id="brews">
+    <div class="cat-head reveal">
+      <span class="cat-num">06</span>
+      <div>
+        <h2>Chaya &amp; Brew Bar</h2>
+        <p>Cardamom Sulaimani • Spiced milk chaya • Brass meter coffee • Single-origin espresso.</p>
+      </div>
+    </div>
+    <div class="shelf">
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge">FRESH PULLED</span>
+          <img src="images/milk-tea.jpg" alt="Kerala Milk Tea">
+        </div>
+        <div class="info">
+          <h4>Kerala Milk Tea</h4>
+          <small>Strong brewed tea leaves pulled frothy with rich hot milk and crushed cardamom</small>
+          <span class="aisle">Barista Corner • Chaya</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge">KOCHI SIGNATURE</span>
+          <img src="images/sulaimani-tea.jpg" alt="Spiced Cardamom Sulaimani">
+        </div>
+        <div class="info">
+          <h4>Spiced Cardamom Sulaimani</h4>
+          <small>Freshly brewed black tea infused with crushed green cardamom, fresh mint and lemon</small>
+          <span class="aisle">Barista Corner • Chaya</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge green">FROTHY BRASS</span>
+          <img src="images/filter-coffee.jpg" alt="Kerala Filter Coffee">
+        </div>
+        <div class="info">
+          <h4>Kerala Meter Filter Coffee</h4>
+          <small>Strong peaberry chicory decoction pulled with frothy hot farm milk in dabarah</small>
+          <span class="aisle">Barista Corner • Coffee</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge">SPECIALTY ROAST</span>
+          <img src="images/cortado.jpg" alt="Double Shot Espresso &amp; Cortado">
+        </div>
+        <div class="info">
+          <h4>Wayanad Single-Origin Cortado &amp; Espresso</h4>
+          <small>Double espresso shot pulled with silky crema, paired with a bakery butter cookie</small>
+          <span class="aisle">Barista Corner • Espresso</span>
+        </div>
+      </div>
+
+      <div class="item reveal">
+        <div class="im">
+          <span class="badge dark">COLD REFRESH</span>
+          <img src="images/iced-tea.jpg" alt="Hibiscus Mint Iced Cooler">
+        </div>
+        <div class="info">
+          <h4>Hibiscus &amp; Wild Ginger Iced Cooler</h4>
+          <small>Steeped wild hibiscus flowers, bruised ginger root, lime and sparkling water</small>
+          <span class="aisle">Barista Corner • Cold Drinks</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta reveal">
+    <h2>TASTE REAL FRESHNESS</h2>
+    <p>Bakery ovens &amp; fryers live from 6:30AM to 10PM • Hot snack batch drops at 4PM sharp</p>
+    <div>
+      <a href="visit.html" class="btn btn-lime big magnetic">Find Store &amp; Dine-In</a>
+      <a href="about.html" class="btn btn-ghost big magnetic">Our Baking Philosophy</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="foot-grid">
+      <div>
+        <h3>MAANNAPPAM<span>.</span></h3>
+        <p>Classic Snacks &amp; Global Patisserie.<br>Main Road, Bakery Junction, Kochi, Kerala 682016<br>orders@maannappam.in • +91 484 298 4411</p>
+      </div>
+      <div>
+        <b>Explore</b>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About Us</a>
+        <a href="visit.html">Visit Us</a>
+      </div>
+      <div>
+        <b>Bake Timings</b>
+        <p>Mon–Sun: 6:30 – 22:00<br>Morning Croissants: 6:30AM<br>Kerala Snack Rush: 4:00PM<br>Sourdough Deck: 7:30AM</p>
+      </div>
+      <div>
+        <b>Follow the Aroma</b>
+        <div class="socials">
+          <a href="#">IG</a>
+          <a href="#">FB</a>
+          <a href="#">YT</a>
+          <a href="#">WA</a>
+        </div>
+      </div>
+    </div>
+    <p class="copy">© 2026 Maannappam Bakery &amp; Cafe. Handcrafted with love, pure butter, and time-tested recipes.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+

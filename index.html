@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maannappam Bakery &amp; Cafe — Classic Snacks &amp; Global Patisserie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,900;1,9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥐</text></svg>">
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-inner">
+      <div class="loader-cart">🥐</div>
+      <div class="loader-bar"><span></span></div>
+      <div class="loader-text">MAANNAPPAM <em>firing ovens &amp; brewing tea…</em></div>
+    </div>
+  </div>
+
+  <!-- Magnetic Cursor & Film Grain Overlay -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+  <canvas id="grain"></canvas>
+
+  <!-- Navigation -->
+  <header id="nav">
+    <a href="index.html" class="logo">
+      <span class="logo-badge">M</span>
+      <span>MAANNAPPAM <small>BAKERY &amp; CAFE</small></span>
+    </a>
+    <nav class="links">
+      <a href="index.html" class="active">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About Us</a>
+      <a href="visit.html">Visit Us</a>
+    </nav>
+    <div class="nav-cta">
+      <span class="open-dot"></span> Fresh Bakes 6:30AM – 10PM 
+      <a href="visit.html" class="btn btn-lime magnetic">Find Bakery</a>
+    </div>
+    <button id="burger" aria-label="Toggle Navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About Us</a>
+    <a href="visit.html">Visit Us</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="blob b1"></div>
+      <div class="blob b2"></div>
+      <div class="blob b3"></div>
+    </div>
+    <canvas id="floaters"></canvas>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="pill">✨ KERALA HEARTH &amp; WORLD BAKERIES — SINCE 1998</div>
+        <h1 class="mega">HOT BAKES<br><span class="outline">CLASSIC</span> <span class="grad">&amp; WORLD</span><br>SNACKS<span class="lime-dot">.</span></h1>
+        <p class="lede">
+          More than just a bakery. At <b>Maannappam</b>, golden Kerala puffs and hot pazhampori meet artisan French butter croissants and stone-hearth sourdough. 150+ freshly baked delights every single day.
+        </p>
+        <div class="hero-btns">
+          <a href="menu.html" class="btn btn-lime big magnetic">Explore Menu →</a>
+          <a href="about.html" class="btn btn-ghost big magnetic">Our Story</a>
+        </div>
+        <div class="hero-stats">
+          <div><b data-count="28">0</b><span>Years of craft</span></div>
+          <div><b data-count="150" data-suffix="+">0</b><span>Bakes &amp; snacks daily</span></div>
+          <div><b data-count="100" data-suffix="%">0</b><span>Pure butter &amp; farm spices</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="main-card tilt">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=900&auto=format&fit=crop" alt="Fresh artisan baked goods">
+          <div class="price-tag">🥐 Sourdough &amp; Croissants <b>Fresh @ 6:30AM</b></div>
+        </div>
+        <div class="float-card f1">🥟 Meat &amp; Egg Puffs <b>crisp &amp; hot @ 4PM</b></div>
+        <div class="float-card f2">🍌 Pazhampori <b>pure coconut oil</b></div>
+        <div class="float-card f3">⭐ 4.9 <small>8.4k reviews</small></div>
+        <div class="spinning-badge">
+          <svg viewBox="0 0 100 100">
+            <defs>
+              <path id="circ" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/>
+            </defs>
+            <text>
+              <textPath href="#circ">HOT BAKES • MAANNAPPAM • TRADITION &amp; WORLD •</textPath>
+            </text>
+          </svg>
+          <span>🥐</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">scroll<span></span></div>
+  </section>
+
+  <!-- Marquee Ticker -->
+  <div class="marquee">
+    <div class="track">
+      <span>CLASSIC KERALA PUFFS ✦ ARTISAN FRENCH SOURDOUGH ✦ GOLDEN PAZHAMPORI ✦ BUTTER CROISSANTS ✦ KOCHI PLUM CAKE ✦ PAIN AU CHOCOLAT ✦ CARDAMOM SULAIMANI ✦ DANISH PASTRIES ✦&nbsp;</span>
+      <span>CLASSIC KERALA PUFFS ✦ ARTISAN FRENCH SOURDOUGH ✦ GOLDEN PAZHAMPORI ✦ BUTTER CROISSANTS ✦ KOCHI PLUM CAKE ✦ PAIN AU CHOCOLAT ✦ CARDAMOM SULAIMANI ✦ DANISH PASTRIES ✦&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- Worlds of Maannappam -->
+  <section class="section">
+    <div class="sec-head reveal">
+      <div>
+        <p class="kicker">STEP INSIDE</p>
+        <h2>Six worlds of flavor.<br><em>One Maannappam.</em></h2>
+      </div>
+      <a class="link-arrow" href="menu.html">View full menu →</a>
+    </div>
+    <div class="worlds-grid">
+      <a href="menu.html#classic" class="world reveal tilt">
+        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=700&auto=format&fit=crop" alt="Classic Kerala snacks">
+        <div>
+          <h3>Classic Desi Snacks</h3>
+          <p>Flaky meat puffs, egg puffs, spicy cutlets &amp; hot pazhampori.</p>
+          <span>Counter 01 • Evening Rush →</span>
+        </div>
+      </a>
+      <a href="menu.html#viennoiserie" class="world reveal tilt">
+        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=700&auto=format&fit=crop" alt="European Viennoiserie">
+        <div>
+          <h3>Viennoiserie</h3>
+          <p>Golden honeycomb croissants, pain au chocolat &amp; fruit danish.</p>
+          <span>Counter 02 • Morning Batch →</span>
+        </div>
+      </a>
+      <a href="menu.html#breads" class="world reveal tilt">
+        <img src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?q=80&w=700&auto=format&fit=crop" alt="Artisan Breads">
+        <div>
+          <h3>Artisan Breads</h3>
+          <p>Wild sourdough, rustic baguettes, seeded rye &amp; brioche loaves.</p>
+          <span>Hearth Shelf • Deck Ovens →</span>
+        </div>
+      </a>
+      <a href="menu.html#patisserie" class="world reveal tilt">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=700&auto=format&fit=crop" alt="Patisserie &amp; Desserts">
+        <div>
+          <h3>World Patisserie</h3>
+          <p>Parisian eclairs, berry tarts, cheesecakes &amp; delicate macarons.</p>
+          <span>Glass Counter • Chilled →</span>
+        </div>
+      </a>
+      <a href="menu.html#cakes" class="world reveal tilt">
+        <img src="https://images.unsplash.com/photo-1535141192574-5d4897c13136?q=80&w=700&auto=format&fit=crop" alt="Heritage Cakes">
+        <div>
+          <h3>Heritage Cakes &amp; Sweets</h3>
+          <p>Legendary Kerala plum cake, ghee halwa, tea cakes &amp; unniyappam.</p>
+          <span>Tradition Shelf →</span>
+        </div>
+      </a>
+      <a href="menu.html#brews" class="world reveal tilt">
+        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=700&auto=format&fit=crop" alt="Tea and Coffee bar">
+        <div>
+          <h3>Chaya &amp; Brew Bar</h3>
+          <p>Fresh cardamom Sulaimani, filter chaya, single-origin espresso.</p>
+          <span>Barista Corner →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- The Experience -->
+  <section class="experience">
+    <div class="exp-bg"></div>
+    <div class="exp-inner">
+      <p class="kicker light reveal">WHY PEOPLE STAY FOR HOURS</p>
+      <h2 class="reveal">It smells like <em>caramelized butter</em>,<br>spices from the <em>Western Ghats</em>,<br>and feels like <em>home.</em></h2>
+      <div class="exp-cards">
+        <div class="exp reveal tilt">
+          <b>🌅 4:30 AM Morning Hearth</b>
+          <p>Deck ovens roar to life before sunrise. Wild levain sourdough expands, French butter laminates into 81 flaky layers, and hot milk bread fills the morning air.</p>
+        </div>
+        <div class="exp reveal tilt">
+          <b>🥟 Live 4 PM Kerala Snack Rush</b>
+          <p>Watch golden pazhampori sizzle in pure coconut oil, flaky meat and egg puffs blister fresh from the tray, and steamed unniyappam fly off the counter.</p>
+        </div>
+        <div class="exp reveal tilt">
+          <b>☕ Where Paris Meets Kochi</b>
+          <p>Dunk an almond croissant into a fragrant glass of spiced Sulaimani. Why choose between European mastery and Kerala nostalgia when you can savor both?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Crowd Favourites Rail -->
+  <section class="section">
+    <div class="sec-head reveal">
+      <div>
+        <p class="kicker">CROWD FAVOURITES</p>
+        <h2>Loved to <em>obsession.</em></h2>
+      </div>
+    </div>
+    <div class="rail">
+      <div class="prod reveal tilt">
+        <img src="images/meat-puff.jpg" alt="Meat Puff">
+        <h4>Meat Puff</h4>
+        <p>Classic Snacks • Hot at 4PM</p>
+      </div>
+      <div class="prod reveal tilt">
+        <img src="images/almond-croissant.jpg" alt="Almond Butter Croissant">
+        <h4>Almond Butter Croissant</h4>
+        <p>Viennoiserie • French Butter</p>
+      </div>
+      <div class="prod reveal tilt">
+        <img src="images/pazhampori.jpg" alt="Nadan Pazhampori">
+        <h4>Nadan Pazhampori</h4>
+        <p>Classic Snacks • Palakkad Nendran</p>
+      </div>
+      <div class="prod reveal tilt">
+        <img src="images/sourdough-boule.jpg" alt="48-Hour Wild Sourdough">
+        <h4>48-Hour Wild Sourdough</h4>
+        <p>Artisan Breads • Heirloom Grains</p>
+      </div>
+      <div class="prod reveal tilt">
+        <img src="images/plum-cake.jpg" alt="Kochi Heritage Plum Cake">
+        <h4>Kochi Heritage Plum Cake</h4>
+        <p>Heritage Cakes • Fruit Soaked</p>
+      </div>
+      <div class="prod reveal tilt">
+        <img src="images/pain-au-chocolat.jpg" alt="Pain au Chocolat">
+        <h4>Pain au Chocolat</h4>
+        <p>Viennoiserie • Dark Callebaut 70%</p>
+      </div>
+    </div>
+    <p class="center reveal">
+      <a href="menu.html" class="btn btn-dark big magnetic">Explore all 150+ items on Menu →</a>
+    </p>
+  </section>
+
+  <!-- About Teaser -->
+  <section class="about-teaser">
+    <div class="at-img reveal">
+      <img src="https://images.unsplash.com/photo-1556217477-d325251ece38?q=80&w=900&auto=format&fit=crop" alt="Bakers craft at Maannappam">
+      <div class="at-badge">since<br><b>1998</b></div>
+    </div>
+    <div class="at-copy">
+      <p class="kicker reveal">OUR STORY</p>
+      <h2 class="reveal">Born from an authentic brick oven. Built for food lovers.</h2>
+      <p class="reveal">
+        Maannappam started in 1998 with grandmother's recipe notebook and a wood-fired hearth. Over 28 years, our bakers journeyed from old Kerala tea stalls to European boulangeries, blending time-honored Indian snack traditions with classical French lamination.
+      </p>
+      <div class="at-points reveal">
+        <span>✔ 100% Real French Butter &amp; Ghee</span>
+        <span>✔ Zero Artificial Additives</span>
+        <span>✔ Fresh Batches Every 3 Hours</span>
+      </div>
+      <a href="about.html" class="btn btn-lime magnetic reveal">Read our full story →</a>
+    </div>
+  </section>
+
+  <!-- Wall of Love -->
+  <section class="section">
+    <div class="sec-head reveal">
+      <div>
+        <p class="kicker">WALL OF LOVE</p>
+        <h2>People don't just eat here.<br><em>They celebrate every bite.</em></h2>
+      </div>
+    </div>
+    <div class="love-grid">
+      <div class="quote reveal tilt">
+        ★★★★★
+        <p>"The egg puffs are pure nostalgia, but their almond croissant rivals anything in Paris. Best bakery in the city without a doubt!"</p>
+        <b>— Vivek N., Marine Drive</b>
+      </div>
+      <div class="quote reveal tilt">
+        ★★★★★
+        <p>"4 PM here is magic. Fresh hot pazhampori with a Sulaimani tea, followed by sourdough bread to take home. Pure bliss."</p>
+        <b>— Anjali &amp; Rakesh, Kadavanthra</b>
+      </div>
+      <div class="quote reveal tilt">
+        ★★★★★
+        <p>"Their Christmas plum cake is an heirloom tradition in our family. Now my kids won't eat chocolate croissants from anywhere else."</p>
+        <b>— Mary Kurian, Fort Kochi</b>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta reveal">
+    <h2>hungry already?</h2>
+    <p>Ovens hot every day 6:30AM – 10PM • Fresh afternoon snack rush at 4PM • Warm dine-in seating</p>
+    <div>
+      <a href="visit.html" class="btn btn-lime big magnetic">Plan Your Visit</a>
+      <a href="menu.html" class="btn btn-ghost big magnetic">Browse Full Menu</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="foot-grid">
+      <div>
+        <h3>MAANNAPPAM<span>.</span></h3>
+        <p>Classic Snacks &amp; Global Patisserie.<br>Main Road, Bakery Junction, Kochi, Kerala 682016<br>orders@maannappam.in • +91 484 298 4411</p>
+      </div>
+      <div>
+        <b>Explore</b>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About Us</a>
+        <a href="visit.html">Visit Us</a>
+      </div>
+      <div>
+        <b>Bake Timings</b>
+        <p>Mon–Sun: 6:30 – 22:00<br>Morning Croissants: 6:30AM<br>Kerala Snack Rush: 4:00PM<br>Sourdough Deck: 7:30AM</p>
+      </div>
+      <div>
+        <b>Follow the Aroma</b>
+        <div class="socials">
+          <a href="#">IG</a>
+          <a href="#">FB</a>
+          <a href="#">YT</a>
+          <a href="#">WA</a>
+        </div>
+      </div>
+    </div>
+    <p class="copy">© 2026 Maannappam Bakery &amp; Cafe. Handcrafted with love, pure butter, and time-tested recipes.</p>
+  </footer>
+
+  <!-- GSAP & Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
