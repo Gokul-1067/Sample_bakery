@@ -88,12 +88,14 @@ if (dot && ring && window.matchMedia('(pointer: fine)').matches) {
     interactive.addEventListener('mouseenter', () => {
       ring.style.width = '52px';
       ring.style.height = '52px';
-      ring.style.borderColor = 'var(--orange)';
+      ring.style.borderColor = 'var(--terracotta)';
+      ring.style.background = 'rgba(232, 168, 72, 0.08)';
     });
     interactive.addEventListener('mouseleave', () => {
       ring.style.width = '36px';
       ring.style.height = '36px';
-      ring.style.borderColor = 'var(--lime)';
+      ring.style.borderColor = 'var(--honey)';
+      ring.style.background = 'transparent';
     });
   });
 }
