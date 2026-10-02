@@ -59,59 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ------------------------------------------------------------------------
-  // 2. Magnetic Amber Glow Cursor
-  // ------------------------------------------------------------------------
-  const dot = document.querySelector('.cursor-dot');
-  const ring = document.querySelector('.cursor-ring');
-
-  if (dot && ring && window.matchMedia('(pointer: fine)').matches) {
-    let mouseMoved = false;
-    let mouseX = -100;
-    let mouseY = -100;
-    let ringX = -100;
-    let ringY = -100;
-
-    window.addEventListener('mousemove', (e) => {
-      if (!mouseMoved) {
-        mouseMoved = true;
-        dot.style.opacity = '1';
-        ring.style.opacity = '1';
-        ringX = e.clientX;
-        ringY = e.clientY;
-      }
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      dot.style.transform = `translate(${mouseX - 4}px, ${mouseY - 4}px)`;
-    }, { passive: true });
-
-    const renderCursor = () => {
-      if (mouseMoved) {
-        ringX += (mouseX - ringX) * 0.16;
-        ringY += (mouseY - ringY) * 0.16;
-        ring.style.transform = `translate(${ringX - 19}px, ${ringY - 19}px)`;
-      }
-      requestAnimationFrame(renderCursor);
-    };
-    requestAnimationFrame(renderCursor);
-
-    // Interactive Hover Magnification
-    const hoverTargets = 'a, button, .cat-btn, .food-card, .satellite-card, .atelier-item, .stat-tile, .timeline-tile, .bell-interactive-trigger, .booking-card';
-    document.querySelectorAll(hoverTargets).forEach((el) => {
-      el.addEventListener('mouseenter', () => {
-        ring.style.width = '52px';
-        ring.style.height = '52px';
-        ring.style.borderColor = 'var(--amber)';
-        ring.style.background = 'rgba(232, 168, 72, 0.12)';
-      });
-      el.addEventListener('mouseleave', () => {
-        ring.style.width = '38px';
-        ring.style.height = '38px';
-        ring.style.borderColor = 'rgba(232, 168, 72, 0.6)';
-        ring.style.background = 'transparent';
-      });
-    });
-  }
 
   // ------------------------------------------------------------------------
   // 3. 3D Parallax & Depth Tilt on Hero Stage

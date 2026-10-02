@@ -62,7 +62,6 @@ body {
   color: var(--cream);
   font-family: var(--font-b);
   overflow-x: hidden;
-  cursor: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -101,47 +100,11 @@ img {
 }
 
 /* ==========================================================================
-   Magnetic Fluid Cursor (Glowing Brass Orb)
+   Cursor: Clean Native OS Pointer
    ========================================================================== */
 .cursor-dot,
 .cursor-ring {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9998;
-  border-radius: 50%;
-  will-change: transform;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.cursor-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--amber);
-  box-shadow: 0 0 12px var(--amber-glow);
-}
-
-.cursor-ring {
-  width: 38px;
-  height: 38px;
-  border: 1.5px solid rgba(232, 168, 72, 0.6);
-  transition: opacity 0.3s ease,
-              width 0.25s cubic-bezier(0.2, 0.8, 0.4, 1),
-              height 0.25s cubic-bezier(0.2, 0.8, 0.4, 1),
-              border-color 0.25s ease,
-              background 0.25s ease;
-}
-
-@media (pointer: coarse) {
-  body {
-    cursor: auto !important;
-  }
-  .cursor-dot,
-  .cursor-ring {
-    display: none !important;
-  }
+  display: none !important;
 }
 
 /* ==========================================================================
@@ -1835,13 +1798,6 @@ footer {
    Responsive Adaptations
    ========================================================================== */
 @media (max-width: 1050px) {
-  body {
-    cursor: auto;
-  }
-  .cursor-dot,
-  .cursor-ring {
-    display: none;
-  }
   .hero-grid,
   .bell-rush-inner,
   .story-grid,
