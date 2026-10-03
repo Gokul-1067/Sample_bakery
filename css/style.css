@@ -5,45 +5,71 @@
    ========================================================================== */
 
 :root {
-  /* Cinematic Hearth Palette */
-  --bg-deep: #0c0a08;             /* Deepest smoked charcoal */
-  --bg-base: #13100d;             /* Warm hearth floor */
-  --bg-card: #1c1713;             /* Warm walnut card base */
-  --bg-card-hover: #26201b;       /* Elevated card on hover */
-  --bg-card-glass: rgba(28, 23, 19, 0.78);
+  /* Warm Handcrafted Bakery Palette */
+  --bg-deep: #FAF6EE;             /* Warm clotted cream / French unbleached parchment */
+  --bg-base: #FAF6EE;
+  --bg-subtle: #F3ECE0;           /* Subtle warm oat parchment for alternate sections */
+  --bg-card: #FFFFFF;             /* Crisp bakery card surface */
+  --bg-card-hover: #FFFDF9;       /* Elevated card on hover */
+  --bg-card-glass: rgba(255, 255, 255, 0.90);
+  --bg-espresso: #201511;         /* Deep roasted espresso for footer / dark anchors */
   
-  --cream: #faf5ed;               /* Clotted cream / unbleached flour */
-  --cream-soft: #ede3d3;          /* Warm oat */
-  --cream-muted: #ad9f8d;         /* Secondary editorial text */
+  /* Dark Espresso Brown for strong text & headings */
+  --espresso: #201511;            /* Headings, titles, brand text */
+  --espresso-soft: #43332A;       /* Body copy & readable paragraphs */
+  --espresso-muted: #736154;      /* Secondary editorial text & labels */
+  --espresso-faint: #A39183;      /* Subtle caption / hairline labels */
+
+  /* Backward-compatible text aliases mapped directly to espresso */
+  --cream: #201511;               /* Dark espresso brown for strong text */
+  --cream-soft: #43332A;          /* Warm coffee brown for body text */
+  --cream-muted: #736154;         /* Hazelnut muted for captions */
   
-  /* Luminous Warm Embers */
-  --amber: #e8a848;               /* Golden crust & French butter */
-  --amber-light: #f7c36e;         /* Bright butter sheen */
-  --amber-dark: #b87b28;          /* Rich caramel */
-  --amber-glow: rgba(232, 168, 72, 0.38);
-  --amber-soft: rgba(232, 168, 72, 0.12);
+  /* Main Accent: Terracotta / Burnt Orange */
+  --terracotta: #C4552D;          /* Kerala clay oven & Tellicherry burnt orange */
+  --terracotta-dark: #A5411E;     /* Deep terracotta for hover & active states */
+  --terracotta-light: #DE6D43;    /* Light terracotta sheen */
+  --terracotta-glow: rgba(196, 85, 45, 0.28);
+  --terracotta-soft: rgba(196, 85, 45, 0.10);
   
-  --terracotta: #c85a32;          /* Kerala clay oven & Tellicherry spice */
-  --terracotta-glow: rgba(200, 90, 50, 0.35);
-  --terracotta-soft: rgba(200, 90, 50, 0.15);
-  
-  --cardamom: #4e5e44;            /* Highland cardamom leaf */
-  --cardamom-glow: rgba(78, 94, 68, 0.35);
-  
-  /* Hairline Borders with Specular Glow */
-  --border-gold: rgba(232, 168, 72, 0.22);
-  --border-gold-strong: rgba(232, 168, 72, 0.55);
-  --border-subtle: rgba(250, 245, 237, 0.08);
-  
+  /* Secondary Accent: Deep Olive */
+  --olive: #435338;               /* Highland cardamom leaf & deep olive */
+  --olive-dark: #323F2A;
+  --olive-soft: rgba(67, 83, 56, 0.10);
+  --olive-glow: rgba(67, 83, 56, 0.25);
+  --cardamom: #435338;
+  --cardamom-glow: rgba(67, 83, 56, 0.25);
+
+  /* Soft Golden Yellow for Small Highlights */
+  --gold: #DDA136;                /* French butter sheen & warm honey */
+  --gold-light: #F0B855;
+  --gold-glow: rgba(221, 161, 54, 0.30);
+  --gold-soft: rgba(221, 161, 54, 0.12);
+
+  /* Primary Accent Token (Terracotta replaces gold as main accent) */
+  --amber: #C4552D;
+  --amber-light: #DE6D43;
+  --amber-dark: #A5411E;
+  --amber-glow: rgba(196, 85, 45, 0.28);
+  --amber-soft: rgba(196, 85, 45, 0.10);
+
+  /* Hairline Borders with Warm Bakery Glow */
+  --border-gold: rgba(196, 85, 45, 0.20);        /* Soft terracotta border */
+  --border-gold-strong: rgba(196, 85, 45, 0.45); /* Defined terracotta border */
+  --border-subtle: rgba(67, 51, 42, 0.12);       /* Warm espresso hairline */
+  --border-olive: rgba(67, 83, 56, 0.22);
+  --border-warm: rgba(196, 85, 45, 0.20);
+  --border-accent: rgba(196, 85, 45, 0.45);
+
   /* Typography */
   --font-d: 'Playfair Display', Georgia, serif;
   --font-b: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   
-  /* Shadows & Depth */
-  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 14px 34px rgba(0, 0, 0, 0.6);
-  --shadow-lg: 0 28px 70px rgba(0, 0, 0, 0.75);
-  --shadow-amber: 0 16px 44px rgba(232, 168, 72, 0.24);
+  /* Shadows & Depth: Warm tactile depth, no dirty black smudges */
+  --shadow-sm: 0 4px 14px rgba(45, 30, 20, 0.05);
+  --shadow-md: 0 14px 34px rgba(45, 30, 20, 0.08), 0 2px 8px rgba(45, 30, 20, 0.04);
+  --shadow-lg: 0 28px 60px rgba(45, 30, 20, 0.12), 0 6px 18px rgba(45, 30, 20, 0.05);
+  --shadow-amber: 0 14px 36px rgba(196, 85, 45, 0.20);
 }
 
 /* Base Reset */
@@ -59,7 +85,7 @@ html {
 
 body {
   background-color: var(--bg-deep);
-  color: var(--cream);
+  color: var(--espresso-soft);
   font-family: var(--font-b);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -77,8 +103,8 @@ img {
 }
 
 ::selection {
-  background: var(--amber);
-  color: #0c0a08;
+  background: var(--terracotta);
+  color: #FFFFFF;
 }
 
 /* ==========================================================================
@@ -89,7 +115,7 @@ img {
   inset: 0;
   pointer-events: none;
   z-index: 9997;
-  opacity: 0.042;
+  opacity: 0.024;
 }
 
 #floaters {
@@ -113,7 +139,7 @@ img {
 #preloader {
   position: fixed;
   inset: 0;
-  background: #0c0a08;
+  background: #FAF6EE;
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -136,12 +162,12 @@ img {
   font-size: 52px;
   display: inline-block;
   animation: emberBreath 1.8s infinite alternate ease-in-out;
-  filter: drop-shadow(0 0 20px var(--amber-glow));
+  filter: drop-shadow(0 0 20px var(--terracotta-glow));
 }
 
 @keyframes emberBreath {
-  0% { transform: scale(0.95); filter: drop-shadow(0 0 10px rgba(232, 168, 72, 0.2)); }
-  100% { transform: scale(1.08); filter: drop-shadow(0 0 28px rgba(232, 168, 72, 0.6)); }
+  0% { transform: scale(0.95); filter: drop-shadow(0 0 10px rgba(196, 85, 45, 0.2)); }
+  100% { transform: scale(1.08); filter: drop-shadow(0 0 28px rgba(196, 85, 45, 0.5)); }
 }
 
 .loader-title {
@@ -157,7 +183,7 @@ img {
 .loader-track {
   width: 200px;
   height: 3px;
-  background: rgba(250, 245, 237, 0.1);
+  background: rgba(67, 51, 42, 0.12);
   margin: 22px auto 14px;
   border-radius: 99px;
   overflow: hidden;
@@ -167,7 +193,7 @@ img {
   display: block;
   height: 100%;
   width: 45%;
-  background: linear-gradient(90deg, var(--terracotta), var(--amber));
+  background: linear-gradient(90deg, var(--terracotta), var(--gold));
   border-radius: 99px;
   animation: trackMove 1.2s infinite alternate ease-in-out;
 }
@@ -192,8 +218,8 @@ img {
    Header & Floating Navigation Bar
    ========================================================================== */
 .top-ticker {
-  background: linear-gradient(90deg, #16120e, #241c16, #16120e);
-  color: var(--cream-muted);
+  background: #F3ECE0;
+  color: var(--espresso-muted);
   font-size: 11px;
   letter-spacing: 1.8px;
   text-transform: uppercase;
@@ -201,11 +227,11 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--border-gold);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .top-ticker b {
-  color: var(--amber);
+  color: var(--terracotta);
   font-weight: 700;
 }
 
@@ -218,17 +244,17 @@ img {
   align-items: center;
   justify-content: space-between;
   padding: 16px 4vw;
-  background: rgba(12, 10, 8, 0.88);
+  background: rgba(250, 246, 238, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border-gold);
+  border-bottom: 1px solid var(--border-subtle);
   transition: padding 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
 #nav.scrolled {
   padding: 12px 4vw;
-  background: rgba(12, 10, 8, 0.96);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  background: rgba(250, 246, 238, 0.98);
+  box-shadow: 0 10px 30px rgba(45, 30, 20, 0.06);
 }
 
 /* Logo */
@@ -242,15 +268,15 @@ img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--amber), var(--terracotta));
-  color: #0c0a08;
+  background: linear-gradient(135deg, var(--terracotta), var(--terracotta-dark));
+  color: #FFFFFF;
   display: grid;
   place-content: center;
   font-family: var(--font-d);
   font-size: 20px;
   font-weight: 900;
-  box-shadow: 0 4px 18px var(--amber-glow);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 18px var(--terracotta-glow);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.4, 1);
 }
 
@@ -334,22 +360,22 @@ img {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(232, 168, 72, 0.08);
-  border: 1px solid var(--border-gold);
+  background: rgba(67, 83, 56, 0.08);
+  border: 1px solid var(--border-olive);
   padding: 6px 14px;
   border-radius: 99px;
   font-size: 11.5px;
   font-weight: 700;
-  color: var(--amber);
+  color: var(--olive);
   letter-spacing: 0.5px;
 }
 
 .live-dot {
   width: 8px;
   height: 8px;
-  background: #39d968;
+  background: #2E9E4C;
   border-radius: 50%;
-  box-shadow: 0 0 10px #39d968;
+  box-shadow: 0 0 10px rgba(46, 158, 76, 0.5);
   animation: pulseBeacon 2s infinite ease-in-out;
 }
 
@@ -362,7 +388,7 @@ img {
 #burger {
   display: none;
   background: transparent;
-  border: 1px solid var(--border-gold);
+  border: 1px solid var(--border-subtle);
   border-radius: 10px;
   padding: 9px;
   flex-direction: column;
@@ -374,7 +400,7 @@ img {
   display: block;
   width: 22px;
   height: 2px;
-  background: var(--cream);
+  background: var(--espresso);
   border-radius: 2px;
   transition: all 0.3s ease;
 }
@@ -384,7 +410,7 @@ img {
   display: flex;
   position: fixed;
   inset: 0;
-  background: #0c0a08;
+  background: #FAF6EE;
   z-index: 999;
   flex-direction: column;
   align-items: center;
@@ -436,13 +462,13 @@ img {
   white-space: nowrap;
 }
 
-/* Primary Amber Butter Button */
+/* Primary Terracotta Artisan Button */
 .btn-amber,
 .btn-lime,
 .btn-primary {
-  background: linear-gradient(135deg, var(--amber), #c47d24);
-  color: #0c0a08;
-  box-shadow: 0 8px 24px var(--amber-glow);
+  background: linear-gradient(135deg, var(--terracotta), var(--terracotta-dark));
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px var(--terracotta-glow);
   border-color: rgba(255, 255, 255, 0.25);
 }
 
@@ -450,25 +476,25 @@ img {
 .btn-lime:hover,
 .btn-primary:hover {
   transform: translateY(-3px) scale(1.02);
-  background: linear-gradient(135deg, var(--amber-light), var(--amber));
-  box-shadow: 0 14px 34px rgba(232, 168, 72, 0.5);
-  color: #0c0a08;
+  background: linear-gradient(135deg, var(--terracotta-light), var(--terracotta));
+  box-shadow: 0 14px 34px rgba(196, 85, 45, 0.45);
+  color: #FFFFFF;
 }
 
-/* Ghost Button with Amber Hairline */
+/* Ghost Button with Terracotta / Warm Hairline */
 .btn-ghost {
-  background: rgba(28, 23, 19, 0.6);
-  border-color: var(--border-gold);
-  color: var(--cream);
+  background: rgba(255, 255, 255, 0.85);
+  border-color: var(--border-subtle);
+  color: var(--espresso);
   backdrop-filter: blur(10px);
 }
 
 .btn-ghost:hover {
-  border-color: var(--amber);
-  background: rgba(232, 168, 72, 0.12);
-  color: var(--amber);
+  border-color: var(--terracotta);
+  background: var(--terracotta-soft);
+  color: var(--terracotta);
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 20px rgba(45, 30, 20, 0.08);
 }
 
 .btn.big {
@@ -643,8 +669,8 @@ img {
   height: 420px;
   border-radius: 170px 170px 24px 24px; /* Sculpted bakery arch */
   overflow: hidden;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85), 0 0 60px rgba(232, 168, 72, 0.28);
-  border: 1.5px solid var(--border-gold-strong);
+  box-shadow: 0 30px 80px rgba(45, 30, 20, 0.18), 0 0 60px rgba(196, 85, 45, 0.15);
+  border: 1.5px solid var(--border-accent);
   background: var(--bg-card);
   transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.4, 1);
   will-change: transform;
@@ -665,32 +691,32 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: rgba(18, 14, 11, 0.92);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--border-gold);
+  border: 1px solid var(--border-subtle);
   padding: 7px 16px;
   border-radius: 99px;
   margin-bottom: 14px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 8px 24px rgba(45, 30, 20, 0.08);
   z-index: 3;
 }
 
 .arch-keystone-pill .keystone-chamber {
   font-size: 11.5px;
   font-weight: 600;
-  color: var(--cream);
+  color: var(--espresso);
   letter-spacing: 0.3px;
 }
 
 .arch-keystone-pill .keystone-dot {
-  color: var(--amber);
-  opacity: 0.7;
+  color: var(--olive);
+  opacity: 0.8;
   font-size: 10px;
 }
 
 .arch-keystone-pill .keystone-batch {
-  color: var(--amber);
+  color: var(--terracotta);
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.6px;
@@ -740,7 +766,7 @@ img {
 
 .telemetry-metric-item {
   text-align: center;
-  background: rgba(12, 10, 8, 0.5);
+  background: #F8F3EA;
   border: 1px solid var(--border-subtle);
   border-radius: 12px;
   padding: 10px 6px;
@@ -769,13 +795,13 @@ img {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(232, 168, 72, 0.08);
-  border: 1px solid var(--border-gold);
+  background: rgba(67, 83, 56, 0.08);
+  border: 1px solid var(--border-olive);
   padding: 8px 12px;
   border-radius: 10px;
   font-size: 11px;
   font-weight: 700;
-  color: var(--cream-soft);
+  color: var(--olive);
 }
 
 /* Satellite Floating Food Elements */
@@ -783,10 +809,10 @@ img {
   background: var(--bg-card-glass);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--border-gold);
+  border: 1px solid var(--border-subtle);
   border-radius: 18px;
   padding: 10px 16px;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.65);
+  box-shadow: 0 14px 34px rgba(45, 30, 20, 0.08);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -820,7 +846,7 @@ img {
 .satellite-card p {
   font-size: 10.5px;
   font-weight: 700;
-  color: var(--amber);
+  color: var(--olive);
   text-transform: uppercase;
   letter-spacing: 0.8px;
 }
@@ -834,8 +860,8 @@ img {
   position: absolute;
   bottom: -20px;
   z-index: 4;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85);
-  border: 1.5px solid var(--amber);
+  box-shadow: 0 16px 40px rgba(45, 30, 20, 0.12);
+  border: 1.5px solid var(--terracotta);
   animation: satCenterFloat 5s infinite alternate ease-in-out;
 }
 
@@ -848,9 +874,9 @@ img {
    Kinetic Baker's Ribbon (Interactive Infinite Marquee)
    ========================================================================== */
 .kinetic-marquee {
-  background: #14100c;
-  border-top: 1px solid var(--border-gold);
-  border-bottom: 1px solid var(--border-gold);
+  background: #EFE6D8;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
   padding: 16px 0;
   overflow: hidden;
   position: relative;
@@ -895,9 +921,9 @@ img {
 .bell-rush-section {
   position: relative;
   padding: 110px 4vw;
-  background: radial-gradient(circle at 50% 30%, #261912 0%, #120e0b 70%);
-  border-top: 1px solid var(--border-gold);
-  border-bottom: 1px solid var(--border-gold);
+  background: linear-gradient(135deg, #F6EFE5 0%, #EFE5D6 100%);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
   overflow: hidden;
 }
 
@@ -915,7 +941,7 @@ img {
   align-items: center;
   gap: 8px;
   background: var(--terracotta);
-  color: #fff;
+  color: #FFFFFF;
   padding: 6px 16px;
   border-radius: 99px;
   font-size: 11.5px;
@@ -952,8 +978,8 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  background: linear-gradient(135deg, var(--terracotta), #9e3f1e);
-  color: #fff;
+  background: linear-gradient(135deg, var(--terracotta), var(--terracotta-dark));
+  color: #FFFFFF;
   padding: 15px 30px;
   border-radius: 99px;
   font-weight: 800;
@@ -961,7 +987,7 @@ img {
   letter-spacing: 0.8px;
   box-shadow: 0 8px 24px var(--terracotta-glow);
   cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -986,8 +1012,8 @@ img {
   border-radius: 24px;
   overflow: hidden;
   box-shadow: var(--shadow-lg);
-  border: 1px solid var(--border-gold-strong);
-  background: var(--bg-card);
+  border: 2px solid var(--border-accent);
+  background: #FFFFFF;
   transform: rotate(-3deg);
   transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.4, 1);
 }
@@ -1011,8 +1037,8 @@ img {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: var(--shadow-lg);
-  border: 2px solid var(--amber);
-  background: var(--bg-card);
+  border: 2px solid var(--terracotta);
+  background: #FFFFFF;
   transform: rotate(5deg);
   transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.4, 1);
 }
@@ -1108,10 +1134,10 @@ img {
 }
 
 .cat-btn.active {
-  background: linear-gradient(135deg, var(--amber), var(--amber-dark));
-  color: #0c0a08;
-  border-color: var(--amber);
-  box-shadow: 0 6px 20px var(--amber-glow);
+  background: var(--terracotta);
+  color: #FFFFFF;
+  border-color: var(--terracotta);
+  box-shadow: 0 6px 20px var(--terracotta-glow);
 }
 
 /* Spotlight Card + Satellite Food Grid Layout */
@@ -1146,7 +1172,7 @@ img {
   position: relative;
   height: 230px;
   overflow: hidden;
-  background: #15110d;
+  background: #F3ECE0;
 }
 
 .food-card-media img {
@@ -1165,7 +1191,7 @@ img {
   top: 14px;
   left: 14px;
   background: var(--terracotta);
-  color: #fff;
+  color: #FFFFFF;
   font-size: 10.5px;
   font-weight: 800;
   letter-spacing: 0.8px;
@@ -1173,17 +1199,17 @@ img {
   padding: 5px 12px;
   border-radius: 99px;
   z-index: 2;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 12px rgba(45, 30, 20, 0.15);
 }
 
 .food-card-badge.amber {
-  background: var(--amber);
-  color: #0c0a08;
+  background: var(--gold);
+  color: #201511;
 }
 
 .food-card-badge.green {
-  background: var(--cardamom);
-  color: #fff;
+  background: var(--olive);
+  color: #FFFFFF;
 }
 
 .food-card-body {
@@ -1222,11 +1248,11 @@ img {
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: var(--amber);
-  background: var(--amber-soft);
+  color: var(--olive);
+  background: var(--olive-soft);
   padding: 5px 12px;
   border-radius: 99px;
-  border: 1px solid var(--border-gold);
+  border: 1px solid var(--border-olive);
 }
 
 /* ==========================================================================
@@ -1297,9 +1323,9 @@ img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--terracotta), #8c3214);
-  color: #fff;
-  border: 2px solid var(--amber);
+  background: linear-gradient(135deg, var(--terracotta), var(--terracotta-dark));
+  color: #FFFFFF;
+  border: 2px solid var(--gold);
   display: grid;
   place-content: center;
   text-align: center;
@@ -1394,14 +1420,14 @@ img {
    ========================================================================== */
 .cinematic-cta {
   margin: 60px 4vw 100px;
-  background: linear-gradient(135deg, #2a1b12 0%, #3d251a 50%, #1e130c 100%);
-  border: 1px solid var(--border-gold-strong);
+  background: linear-gradient(135deg, #F3ECE0 0%, #EAE0D0 100%);
+  border: 1.5px solid var(--border-accent);
   border-radius: 36px;
   padding: 90px 4vw;
   text-align: center;
   position: relative;
   overflow: hidden;
-  box-shadow: var(--shadow-lg), 0 0 60px rgba(200, 90, 50, 0.2);
+  box-shadow: var(--shadow-lg), 0 0 60px var(--terracotta-soft);
 }
 
 .cinematic-cta::before {
@@ -1470,8 +1496,8 @@ img {
 }
 
 .journey-act-num {
-  background: var(--amber);
-  color: #0c0a08;
+  background: var(--olive);
+  color: #FAF6EE;
   padding: 2px 9px;
   border-radius: 99px;
   font-size: 10px;
@@ -1538,10 +1564,10 @@ img {
 }
 
 .peel-filter-btn.active {
-  background: linear-gradient(135deg, var(--amber), var(--amber-dark));
-  color: #0c0a08;
-  border-color: var(--amber);
-  box-shadow: 0 4px 18px var(--amber-glow);
+  background: var(--terracotta);
+  color: #FFFFFF;
+  border-color: var(--terracotta);
+  box-shadow: 0 4px 18px var(--terracotta-glow);
 }
 
 .peel-conveyor-wrap {
@@ -1564,8 +1590,8 @@ img {
 /* The Baker's Peel Tray Card */
 .peel-tray-card {
   flex: 0 0 350px;
-  background: linear-gradient(180deg, #1f1914 0%, #15110d 100%);
-  border: 1.5px solid var(--border-gold);
+  background: #FFFFFF;
+  border: 1.5px solid var(--border-subtle);
   border-radius: 24px;
   overflow: hidden;
   box-shadow: var(--shadow-md);
@@ -1592,7 +1618,7 @@ img {
   position: relative;
   height: 230px;
   overflow: hidden;
-  background: #110d0a;
+  background: #F3ECE0;
 }
 
 .peel-tray-media img {
@@ -1610,25 +1636,25 @@ img {
   position: absolute;
   top: 14px;
   left: 14px;
-  background: rgba(18, 14, 11, 0.92);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(12px);
-  border: 1px solid var(--border-gold);
-  color: var(--amber);
+  border: 1px solid var(--border-olive);
+  color: var(--olive);
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.8px;
   text-transform: uppercase;
   padding: 5px 12px;
   border-radius: 99px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 12px rgba(45, 30, 20, 0.08);
 }
 
 .peel-tray-heat-tag {
   position: absolute;
   top: 14px;
   right: 14px;
-  background: linear-gradient(135deg, var(--terracotta), #9e3f1e);
-  color: #fff;
+  background: linear-gradient(135deg, var(--terracotta), var(--terracotta-dark));
+  color: #FFFFFF;
   font-size: 10.5px;
   font-weight: 800;
   padding: 4px 10px;
@@ -1636,7 +1662,7 @@ img {
   display: flex;
   align-items: center;
   gap: 5px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 12px var(--terracotta-glow);
 }
 
 .peel-tray-body {
@@ -1659,7 +1685,7 @@ img {
   grid-template-columns: 1fr 1fr;
   gap: 8px;
   margin: 12px 0 16px;
-  background: rgba(12, 10, 8, 0.55);
+  background: #F8F3EA;
   border: 1px solid var(--border-subtle);
   border-radius: 12px;
   padding: 10px 12px;
@@ -1700,11 +1726,11 @@ img {
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: var(--amber);
-  background: var(--amber-soft);
+  color: #8E5C06;
+  background: var(--gold-soft);
   padding: 4px 10px;
   border-radius: 99px;
-  border: 1px solid var(--border-gold);
+  border: 1px solid rgba(221, 161, 54, 0.4);
 }
 
 .peel-tray-price {
@@ -1744,9 +1770,9 @@ img {
 }
 
 .peel-arrow-btn:hover {
-  background: var(--amber);
-  color: #0c0a08;
-  border-color: var(--amber);
+  background: var(--terracotta);
+  color: #FFFFFF;
+  border-color: var(--terracotta);
   transform: scale(1.08);
 }
 
@@ -1755,9 +1781,9 @@ img {
    ========================================================================== */
 .craft-journey-section {
   padding: 110px 4vw;
-  background: linear-gradient(180deg, #0c0a08 0%, #15110d 50%, #0c0a08 100%);
-  border-top: 1px solid var(--border-gold);
-  border-bottom: 1px solid var(--border-gold);
+  background: #F3ECE0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
   position: relative;
   overflow: hidden;
 }
@@ -1794,9 +1820,9 @@ img {
 }
 
 .craft-step-tab.active {
-  background: linear-gradient(135deg, rgba(232, 168, 72, 0.12), rgba(200, 90, 50, 0.08));
-  border-color: var(--amber);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--amber-soft);
+  background: #FFFFFF;
+  border-color: var(--terracotta);
+  box-shadow: 0 10px 30px rgba(45, 30, 20, 0.08), 0 0 20px var(--terracotta-soft);
 }
 
 .craft-step-tab.active::after {
@@ -1806,7 +1832,7 @@ img {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--terracotta), var(--amber));
+  background: linear-gradient(90deg, var(--terracotta), var(--gold));
 }
 
 .craft-tab-num {
@@ -1853,9 +1879,9 @@ img {
   height: 480px;
   border-radius: 24px;
   overflow: hidden;
-  border: 1px solid var(--border-gold-strong);
+  border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-md);
-  background: #110d0a;
+  background: #F8F3EA;
 }
 
 .craft-media-frame img {
@@ -1869,15 +1895,15 @@ img {
   position: absolute;
   bottom: 20px;
   left: 20px;
-  background: rgba(18, 14, 11, 0.92);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(14px);
-  border: 1px solid var(--border-gold);
+  border: 1px solid var(--border-warm);
   padding: 10px 18px;
   border-radius: 12px;
   display: flex;
   align-items: center;
   gap: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 8px 24px rgba(45, 30, 20, 0.1);
 }
 
 .thermal-icon {
@@ -1989,7 +2015,7 @@ img {
 }
 
 .dialectic-wing.french {
-  border-left: 4px solid var(--amber);
+  border-left: 4px solid var(--olive);
 }
 
 .dialectic-wing-head {
@@ -2015,9 +2041,9 @@ img {
 }
 
 .dialectic-wing.french .dialectic-origin-badge {
-  background: var(--amber-soft);
-  color: var(--amber);
-  border: 1px solid var(--border-gold);
+  background: var(--olive-soft);
+  color: var(--olive);
+  border: 1px solid var(--border-olive);
 }
 
 .dialectic-wing h3 {
@@ -2047,7 +2073,7 @@ img {
   align-items: flex-start;
   padding: 12px 14px;
   border-radius: 12px;
-  background: rgba(12, 10, 8, 0.45);
+  background: #F8F3EA;
   border: 1px solid var(--border-subtle);
 }
 
@@ -2073,11 +2099,11 @@ img {
 
 /* Fusion Box (Where they meet) */
 .dialectic-fusion-box {
-  background: linear-gradient(135deg, #241a12 0%, #17110c 100%);
-  border: 1.5px solid var(--border-gold-strong);
+  background: #FFFFFF;
+  border: 1.5px solid var(--border-accent);
   border-radius: 28px;
   padding: 36px 40px;
-  box-shadow: var(--shadow-lg), 0 0 40px var(--amber-soft);
+  box-shadow: var(--shadow-lg), 0 0 40px var(--terracotta-soft);
   margin-top: 20px;
 }
 
@@ -2112,8 +2138,8 @@ img {
 }
 
 .fusion-mini-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-gold);
+  background: #F8F3EA;
+  border: 1px solid var(--border-subtle);
   border-radius: 18px;
   padding: 20px;
   transition: transform 0.3s ease, border-color 0.3s ease;
@@ -2153,14 +2179,14 @@ img {
    ========================================================================== */
 .hearth-invitation-cta {
   margin: 70px 4vw 100px;
-  background: radial-gradient(circle at 50% 20%, #3a2215 0%, #1a120c 60%, #0e0b08 100%);
-  border: 1px solid var(--border-gold-strong);
+  background: linear-gradient(135deg, #F3ECE0 0%, #E9DFCE 100%);
+  border: 1.5px solid var(--border-accent);
   border-radius: 36px;
   padding: 90px 4vw;
   text-align: center;
   position: relative;
   overflow: hidden;
-  box-shadow: var(--shadow-lg), 0 0 60px rgba(232, 168, 72, 0.15);
+  box-shadow: var(--shadow-lg), 0 0 60px var(--terracotta-soft);
 }
 
 .hearth-invitation-cta h2 {
@@ -2190,14 +2216,15 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: rgba(12, 10, 8, 0.75);
-  border: 1px solid var(--border-gold);
+  background: rgba(255, 255, 255, 0.90);
+  border: 1px solid var(--border-olive);
   padding: 8px 22px;
   border-radius: 99px;
   font-size: 13px;
   font-weight: 700;
-  color: var(--cream-soft);
+  color: var(--olive);
   margin-bottom: 34px;
+  box-shadow: 0 4px 16px rgba(45, 30, 20, 0.06);
 }
 
 .hearth-cta-buttons {
@@ -2211,10 +2238,10 @@ img {
    Architectural Footer
    ========================================================================== */
 footer {
-  background: #090705;
-  border-top: 1px solid var(--border-gold);
+  background: #201511;
+  border-top: 1px solid rgba(196, 85, 45, 0.25);
   padding: 80px 4vw 36px;
-  color: var(--cream);
+  color: #FAF6EE;
 }
 
 .foot-grid {
@@ -2229,16 +2256,16 @@ footer {
   font-family: var(--font-d);
   font-size: 32px;
   letter-spacing: 2px;
-  color: var(--cream);
+  color: #FAF6EE;
   margin-bottom: 12px;
 }
 
 .foot-brand h3 span {
-  color: var(--amber);
+  color: var(--terracotta);
 }
 
 .foot-brand p {
-  color: var(--cream-muted);
+  color: #B8A99A;
   font-size: 14px;
   line-height: 1.7;
 }
@@ -2248,25 +2275,25 @@ footer {
   font-size: 13px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: var(--amber);
+  color: var(--gold);
   margin-bottom: 18px;
 }
 
 .foot-col a {
   display: block;
-  color: var(--cream-muted);
+  color: #EDE4D4;
   font-size: 14px;
   margin: 10px 0;
   transition: color 0.2s, transform 0.2s;
 }
 
 .foot-col a:hover {
-  color: var(--amber);
+  color: var(--terracotta);
   transform: translateX(4px);
 }
 
 .foot-col p {
-  color: var(--cream-muted);
+  color: #B8A99A;
   font-size: 13.5px;
   line-height: 1.65;
 }
@@ -2280,19 +2307,19 @@ footer {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  border: 1px solid var(--border-gold);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   display: grid;
   place-content: center;
   font-size: 12px;
   font-weight: 700;
-  color: var(--cream);
+  color: #FAF6EE;
   transition: all 0.25s ease;
 }
 
 .socials a:hover {
-  background: var(--amber);
-  border-color: var(--amber);
-  color: #0c0a08;
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+  color: #FFFFFF;
   transform: translateY(-2px);
 }
 
@@ -2300,11 +2327,11 @@ footer {
   max-width: 1400px;
   margin: 0 auto;
   padding-top: 28px;
-  border-top: 1px solid var(--border-subtle);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   text-align: center;
-  color: var(--cream-muted);
+  color: #9A897A;
   font-size: 13px;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 /* ==========================================================================
@@ -2594,11 +2621,11 @@ footer {
 .form-field input,
 .form-field select,
 .form-field textarea {
-  background: #120e0b;
-  border: 1px solid var(--border-gold);
+  background: #FAF6EE;
+  border: 1px solid var(--border-subtle);
   border-radius: 12px;
   padding: 14px 16px;
-  color: var(--cream);
+  color: var(--espresso);
   font-family: var(--font-b);
   font-size: 15px;
   transition: border-color 0.25s, box-shadow 0.25s;
@@ -2608,8 +2635,8 @@ footer {
 .form-field select:focus,
 .form-field textarea:focus {
   outline: none;
-  border-color: var(--amber);
-  box-shadow: 0 0 0 3px var(--amber-soft);
+  border-color: var(--terracotta);
+  box-shadow: 0 0 0 3px var(--terracotta-soft);
 }
 
 .form-field textarea {
@@ -2867,12 +2894,12 @@ footer {
   bottom: 34px;
   left: 50%;
   transform: translateX(-50%) translateY(120px);
-  background: linear-gradient(135deg, #1f1813, #2e1d14);
-  border: 1.5px solid var(--amber);
-  color: var(--cream);
+  background: #201511;
+  border: 1.5px solid var(--terracotta);
+  color: #FAF6EE;
   padding: 16px 28px;
   border-radius: 99px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), 0 0 35px var(--amber-glow);
+  box-shadow: 0 20px 50px rgba(45, 30, 20, 0.4), 0 0 35px var(--terracotta-glow);
   display: flex;
   align-items: center;
   gap: 14px;

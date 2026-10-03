@@ -407,7 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       setTimeout(() => {
         bookingForm.innerHTML = `
-          <div style="background: rgba(232, 168, 72, 0.08); border: 1.5px solid var(--amber); border-radius: 20px; padding: 36px; text-align: center;">
+          <div style="background: rgba(196, 85, 45, 0.08); border: 1.5px solid var(--terracotta); border-radius: 20px; padding: 36px; text-align: center;">
             <div style="font-size: 42px; margin-bottom: 14px;">🥐✨</div>
             <h3 style="font-family: var(--font-d); font-size: 26px; color: var(--cream); margin-bottom: 10px;">Hearth Table Reserved!</h3>
             <p style="color: var(--cream-soft); font-size: 15px; line-height: 1.6; max-width: 480px; margin: 0 auto;">
@@ -491,7 +491,7 @@ document.addEventListener('DOMContentLoaded', () => {
       speedY: Math.random() * 0.7 + 0.3,
       speedX: (Math.random() - 0.5) * 0.5,
       opacity: Math.random() * 0.6 + 0.2,
-      color: Math.random() > 0.4 ? 'rgba(232, 168, 72,' : 'rgba(200, 90, 50,'
+      color: Math.random() > 0.4 ? 'rgba(221, 161, 54,' : 'rgba(196, 85, 45,'
     }));
 
     const renderEmbers = () => {
