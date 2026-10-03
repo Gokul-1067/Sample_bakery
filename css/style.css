@@ -481,8 +481,7 @@ img {
    ========================================================================== */
 .hero-stage {
   position: relative;
-  min-height: calc(100vh - 100px);
-  max-height: 900px;
+  min-height: clamp(620px, calc(100vh - 100px), 860px);
   display: flex;
   align-items: center;
   padding: 60px 4vw 80px;
@@ -536,48 +535,37 @@ img {
   100% { transform: translate(-40px, 30px) scale(0.92); }
 }
 
-/* Hero Content Grid */
-.hero-grid {
+/* Hero Altar Wrap (Central Unified Composition) */
+.hero-altar-wrap {
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 50px;
-  align-items: center;
   position: relative;
   z-index: 2;
-}
-
-.hero-copy {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-badge-pill {
-  display: inline-flex;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  background: rgba(232, 168, 72, 0.08);
-  border: 1px solid var(--border-gold);
-  color: var(--amber);
-  padding: 8px 18px;
-  border-radius: 99px;
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  margin-bottom: 24px;
+}
+
+/* Panoramic Masthead Tier */
+.hero-masthead {
+  text-align: center;
+  max-width: 1120px;
+  margin: 0 auto 36px;
+}
+
+.hero-masthead .journey-act-pill {
+  margin-bottom: 18px;
 }
 
 .hero-headline {
   font-family: var(--font-d);
-  font-size: clamp(46px, 6vw, 84px);
-  line-height: 1.04;
+  font-size: clamp(38px, 4.6vw, 68px);
+  line-height: 1.08;
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--cream);
-  margin-bottom: 24px;
+  text-align: center;
 }
 
 .hero-headline em {
@@ -587,73 +575,76 @@ img {
   text-shadow: 0 0 35px var(--amber-glow);
 }
 
-.hero-description {
-  color: var(--cream-soft);
-  font-size: 17.5px;
-  line-height: 1.75;
-  max-width: 580px;
-  margin-bottom: 36px;
-  opacity: 0.92;
-}
-
-.hero-btn-row {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 44px;
-}
-
-/* Hero Quick Bake Metric Bar */
-.hero-metrics {
+/* Tri-Focal Altar Stage: Left Story - Center Arch - Right Telemetry */
+.hero-altar-stage {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: 1fr 1.25fr 1fr;
   gap: 36px;
-  padding-top: 30px;
-  border-top: 1px solid var(--border-subtle);
-  max-width: 540px;
-}
-
-.hero-metrics div b {
-  font-family: var(--font-d);
-  font-size: 38px;
-  color: var(--amber);
-  line-height: 1;
-  display: block;
-  font-weight: 700;
-}
-
-.hero-metrics div span {
-  font-size: 12px;
-  color: var(--cream-muted);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 600;
-  margin-top: 6px;
-  display: block;
-}
-
-/* ==========================================================================
-   3D HERO FOOD COMPOSITION (Multi-Layer Depth)
-   ========================================================================== */
-.hero-stage-visual {
+  align-items: center;
+  width: 100%;
   position: relative;
-  height: 560px;
+}
+
+/* Left Wing: Story Narrative & Action Triggers */
+.hero-altar-wing.left {
   display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-manifesto-box {
+  background: var(--bg-card-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-gold);
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+}
+
+.hero-manifesto-box p {
+  color: var(--cream-soft);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  opacity: 0.95;
+}
+
+.hero-altar-wing.left .hero-btn-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 0;
+}
+
+.hero-altar-wing.left .btn {
+  width: 100%;
+  justify-content: center;
+  padding: 13px 20px;
+  font-size: 14px;
+}
+
+/* Center Core: The Sculpted Hearth Arch */
+.hero-altar-center {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   perspective: 1200px;
+  z-index: 2;
 }
 
-/* Central Colossal Food Showcase */
 .hero-heroic-centerpiece {
   position: relative;
-  width: 380px;
-  height: 480px;
-  border-radius: 200px 200px 28px 28px; /* Sculpted bakery arch */
+  width: 340px;
+  height: 420px;
+  border-radius: 170px 170px 24px 24px; /* Sculpted bakery arch */
   overflow: hidden;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8), 0 0 50px rgba(232, 168, 72, 0.2);
-  border: 1px solid var(--border-gold-strong);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85), 0 0 60px rgba(232, 168, 72, 0.28);
+  border: 1.5px solid var(--border-gold-strong);
   background: var(--bg-card);
   transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.4, 1);
   will-change: transform;
@@ -670,54 +661,142 @@ img {
   transform: scale(1.08);
 }
 
-.centerpiece-overlay {
-  position: absolute;
-  bottom: 20px;
-  left: 18px;
-  right: 18px;
-  background: rgba(18, 14, 11, 0.88);
+.arch-keystone-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(18, 14, 11, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-gold);
-  padding: 14px 18px;
-  border-radius: 14px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 7px 16px;
+  border-radius: 99px;
+  margin-bottom: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  z-index: 3;
 }
 
-.centerpiece-overlay span {
-  font-size: 13.5px;
+.arch-keystone-pill .keystone-chamber {
+  font-size: 11.5px;
   font-weight: 600;
   color: var(--cream);
+  letter-spacing: 0.3px;
 }
 
-.centerpiece-overlay b {
+.arch-keystone-pill .keystone-dot {
   color: var(--amber);
-  font-size: 12.5px;
+  opacity: 0.7;
+  font-size: 10px;
 }
 
-/* Satellite Floating Food Elements (Layered Parallax) */
+.arch-keystone-pill .keystone-batch {
+  color: var(--amber);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+/* Right Wing: Live Hearth Telemetry Podium */
+.hero-altar-wing.right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-telemetry-podium {
+  background: var(--bg-card-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-gold);
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.telemetry-podium-header {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--amber);
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.telemetry-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.telemetry-metric-item {
+  text-align: center;
+  background: rgba(12, 10, 8, 0.5);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 10px 6px;
+}
+
+.telemetry-metric-item b {
+  font-family: var(--font-d);
+  font-size: 24px;
+  color: var(--amber);
+  line-height: 1;
+  display: block;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.telemetry-metric-item span {
+  font-size: 10px;
+  color: var(--cream-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 700;
+  display: block;
+}
+
+.telemetry-status-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(232, 168, 72, 0.08);
+  border: 1px solid var(--border-gold);
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--cream-soft);
+}
+
+/* Satellite Floating Food Elements */
 .satellite-card {
-  position: absolute;
   background: var(--bg-card-glass);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-gold);
   border-radius: 18px;
-  padding: 12px 18px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
+  padding: 10px 16px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.65);
   display: flex;
   align-items: center;
-  gap: 14px;
-  z-index: 3;
+  gap: 12px;
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.4, 1);
   will-change: transform;
 }
 
 .satellite-thumb {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid var(--amber);
@@ -732,52 +811,37 @@ img {
 
 .satellite-card h4 {
   font-family: var(--font-d);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--cream);
   line-height: 1.2;
 }
 
 .satellite-card p {
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 700;
   color: var(--amber);
   text-transform: uppercase;
   letter-spacing: 0.8px;
 }
 
-/* Positioning satellites */
-.sat-1 {
-  top: 30px;
-  left: -20px;
-  animation: satFloatA 6s infinite alternate ease-in-out;
+.hero-altar-wing .satellite-card {
+  position: relative;
+  width: 100%;
 }
 
-.sat-2 {
-  bottom: 40px;
-  right: -25px;
-  animation: satFloatB 7s infinite alternate ease-in-out;
+.sat-center-float {
+  position: absolute;
+  bottom: -20px;
+  z-index: 4;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85);
+  border: 1.5px solid var(--amber);
+  animation: satCenterFloat 5s infinite alternate ease-in-out;
 }
 
-.sat-3 {
-  top: 220px;
-  right: -40px;
-  animation: satFloatC 5.5s infinite alternate ease-in-out;
-}
-
-@keyframes satFloatA {
-  0% { transform: translateY(0) rotate(-1deg); }
-  100% { transform: translateY(-12px) rotate(1.5deg); }
-}
-
-@keyframes satFloatB {
-  0% { transform: translateY(0) rotate(1deg); }
-  100% { transform: translateY(-14px) rotate(-1deg); }
-}
-
-@keyframes satFloatC {
+@keyframes satCenterFloat {
   0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
+  100% { transform: translateY(-8px); }
 }
 
 /* ==========================================================================
@@ -1385,6 +1449,765 @@ img {
 }
 
 /* ==========================================================================
+   THE JOURNEY THROUGH A BAKERY — HOMEPAGE NARRATIVE ARCHITECTURE
+   ========================================================================== */
+
+/* Narrative Act Pills */
+.journey-act-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(232, 168, 72, 0.08);
+  border: 1px solid var(--border-gold);
+  color: var(--amber);
+  padding: 7px 18px;
+  border-radius: 99px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.journey-act-num {
+  background: var(--amber);
+  color: #0c0a08;
+  padding: 2px 9px;
+  border-radius: 99px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   ACT II: THE 220°C OVEN PULL (Baker's Peel Tray Showcase)
+   ========================================================================== */
+.oven-pull-stage {
+  padding: 110px 4vw;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.peel-stage-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.peel-stage-intro {
+  color: var(--cream-soft);
+  font-size: 16.5px;
+  line-height: 1.7;
+  max-width: 620px;
+  margin-top: 12px;
+}
+
+.peel-filter-bar {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 8px 4px 20px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--border-subtle);
+  -webkit-overflow-scrolling: touch;
+}
+.peel-filter-bar::-webkit-scrollbar { display: none; }
+
+.peel-filter-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  color: var(--cream-soft);
+  padding: 10px 22px;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.4, 1);
+}
+
+.peel-filter-btn:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+  transform: translateY(-2px);
+}
+
+.peel-filter-btn.active {
+  background: linear-gradient(135deg, var(--amber), var(--amber-dark));
+  color: #0c0a08;
+  border-color: var(--amber);
+  box-shadow: 0 4px 18px var(--amber-glow);
+}
+
+.peel-conveyor-wrap {
+  position: relative;
+  overflow: hidden;
+  padding: 12px 2px 24px;
+}
+
+.peel-conveyor {
+  display: flex;
+  gap: 26px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 12px 4px 24px;
+  -webkit-overflow-scrolling: touch;
+}
+.peel-conveyor::-webkit-scrollbar { display: none; }
+
+/* The Baker's Peel Tray Card */
+.peel-tray-card {
+  flex: 0 0 350px;
+  background: linear-gradient(180deg, #1f1914 0%, #15110d 100%);
+  border: 1.5px solid var(--border-gold);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.4, 1),
+              border-color 0.4s ease,
+              box-shadow 0.4s ease;
+  will-change: transform;
+}
+
+.peel-tray-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--amber);
+  box-shadow: var(--shadow-lg), 0 0 35px var(--amber-soft);
+}
+
+.peel-tray-card.filtered-out {
+  display: none !important;
+}
+
+.peel-tray-media {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+  background: #110d0a;
+}
+
+.peel-tray-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.4, 1);
+}
+
+.peel-tray-card:hover .peel-tray-media img {
+  transform: scale(1.08);
+}
+
+.peel-tray-station-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(18, 14, 11, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-gold);
+  color: var(--amber);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 99px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.peel-tray-heat-tag {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: linear-gradient(135deg, var(--terracotta), #9e3f1e);
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.peel-tray-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.peel-tray-body h4 {
+  font-family: var(--font-d);
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 6px;
+}
+
+.peel-tray-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 12px 0 16px;
+  background: rgba(12, 10, 8, 0.55);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.peel-spec-item {
+  font-size: 11px;
+  color: var(--cream-muted);
+}
+
+.peel-spec-item b {
+  display: block;
+  color: var(--amber);
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 1px;
+}
+
+.peel-sensory-note {
+  color: var(--cream-soft);
+  font-size: 13.5px;
+  line-height: 1.6;
+  margin-bottom: 18px;
+  flex-grow: 1;
+  opacity: 0.92;
+}
+
+.peel-tray-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.peel-tray-batch {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--amber);
+  background: var(--amber-soft);
+  padding: 4px 10px;
+  border-radius: 99px;
+  border: 1px solid var(--border-gold);
+}
+
+.peel-tray-price {
+  font-family: var(--font-d);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--amber);
+}
+
+/* Peel Conveyor Controls */
+.peel-nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.peel-nav-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.peel-arrow-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  color: var(--cream);
+  font-size: 18px;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.peel-arrow-btn:hover {
+  background: var(--amber);
+  color: #0c0a08;
+  border-color: var(--amber);
+  transform: scale(1.08);
+}
+
+/* ==========================================================================
+   ACT III: FROM OVEN TO TABLE (The 3-Station Interactive Craft Journey)
+   ========================================================================== */
+.craft-journey-section {
+  padding: 110px 4vw;
+  background: linear-gradient(180deg, #0c0a08 0%, #15110d 50%, #0c0a08 100%);
+  border-top: 1px solid var(--border-gold);
+  border-bottom: 1px solid var(--border-gold);
+  position: relative;
+  overflow: hidden;
+}
+
+.craft-journey-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* 3-Step Navigation Track */
+.craft-steps-nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 40px 0 34px;
+}
+
+.craft-step-tab {
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: 20px;
+  padding: 22px 24px;
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.4, 1);
+}
+
+.craft-step-tab:hover {
+  border-color: var(--amber);
+  background: var(--bg-card-hover);
+  transform: translateY(-3px);
+}
+
+.craft-step-tab.active {
+  background: linear-gradient(135deg, rgba(232, 168, 72, 0.12), rgba(200, 90, 50, 0.08));
+  border-color: var(--amber);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--amber-soft);
+}
+
+.craft-step-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--terracotta), var(--amber));
+}
+
+.craft-tab-num {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--amber);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.craft-step-tab h3 {
+  font-family: var(--font-d);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.25;
+}
+
+.craft-step-tab p {
+  font-size: 12.5px;
+  color: var(--cream-muted);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* Interactive Dynamic Stage Grid */
+.craft-stage-display {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 60px;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: 32px;
+  padding: 44px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.craft-media-frame {
+  position: relative;
+  height: 480px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border-gold-strong);
+  box-shadow: var(--shadow-md);
+  background: #110d0a;
+}
+
+.craft-media-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease, opacity 0.4s ease;
+}
+
+.craft-thermal-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(18, 14, 11, 0.92);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border-gold);
+  padding: 10px 18px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+}
+
+.thermal-icon {
+  font-size: 24px;
+}
+
+.thermal-info b {
+  display: block;
+  font-family: var(--font-d);
+  font-size: 16px;
+  color: var(--amber);
+}
+
+.thermal-info span {
+  font-size: 11px;
+  color: var(--cream-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.craft-narrative-copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.craft-narrative-copy h3 {
+  font-family: var(--font-d);
+  font-size: clamp(28px, 3.4vw, 42px);
+  line-height: 1.15;
+  color: var(--cream);
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.craft-narrative-copy h3 em {
+  font-style: italic;
+  color: var(--amber);
+}
+
+.craft-narrative-copy p {
+  color: var(--cream-soft);
+  font-size: 16px;
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+.craft-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-subtle);
+  margin-bottom: 30px;
+}
+
+.craft-spec-box b {
+  font-family: var(--font-d);
+  font-size: 24px;
+  color: var(--amber);
+  display: block;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.craft-spec-box span {
+  font-size: 11.5px;
+  color: var(--cream-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  line-height: 1.3;
+  display: block;
+}
+
+/* ==========================================================================
+   ACT IV: THE CULINARY DIALECTIC (Kerala Heritage × French Patisserie)
+   ========================================================================== */
+.dialectic-section {
+  padding: 110px 4vw;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.dialectic-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  margin: 46px 0 36px;
+}
+
+.dialectic-wing {
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: 28px;
+  padding: 40px 36px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.dialectic-wing:hover {
+  transform: translateY(-4px);
+  border-color: var(--amber);
+}
+
+.dialectic-wing.kerala {
+  border-left: 4px solid var(--terracotta);
+}
+
+.dialectic-wing.french {
+  border-left: 4px solid var(--amber);
+}
+
+.dialectic-wing-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.dialectic-origin-badge {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 99px;
+}
+
+.dialectic-wing.kerala .dialectic-origin-badge {
+  background: var(--terracotta-soft);
+  color: var(--terracotta);
+  border: 1px solid var(--terracotta);
+}
+
+.dialectic-wing.french .dialectic-origin-badge {
+  background: var(--amber-soft);
+  color: var(--amber);
+  border: 1px solid var(--border-gold);
+}
+
+.dialectic-wing h3 {
+  font-family: var(--font-d);
+  font-size: 28px;
+  color: var(--cream);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.dialectic-wing p.dialectic-summary {
+  color: var(--cream-muted);
+  font-size: 14.5px;
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.dialectic-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.dialectic-pillar-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(12, 10, 8, 0.45);
+  border: 1px solid var(--border-subtle);
+}
+
+.pillar-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pillar-content strong {
+  display: block;
+  font-size: 14px;
+  color: var(--cream);
+  margin-bottom: 2px;
+}
+
+.pillar-content span {
+  font-size: 12.5px;
+  color: var(--cream-muted);
+  line-height: 1.45;
+  display: block;
+}
+
+/* Fusion Box (Where they meet) */
+.dialectic-fusion-box {
+  background: linear-gradient(135deg, #241a12 0%, #17110c 100%);
+  border: 1.5px solid var(--border-gold-strong);
+  border-radius: 28px;
+  padding: 36px 40px;
+  box-shadow: var(--shadow-lg), 0 0 40px var(--amber-soft);
+  margin-top: 20px;
+}
+
+.fusion-box-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 30px;
+}
+
+.fusion-box-header h4 {
+  font-family: var(--font-d);
+  font-size: 26px;
+  color: var(--cream);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.fusion-box-header h4 em {
+  color: var(--amber);
+  font-style: italic;
+}
+
+.fusion-box-header p {
+  color: var(--cream-muted);
+  font-size: 14px;
+}
+
+.fusion-cards-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.fusion-mini-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: 18px;
+  padding: 20px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.fusion-mini-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--amber);
+}
+
+.fusion-mini-card b {
+  font-family: var(--font-d);
+  font-size: 17px;
+  color: var(--cream);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.fusion-formula {
+  font-size: 11px;
+  color: var(--amber);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.fusion-mini-card p {
+  font-size: 13px;
+  color: var(--cream-muted);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   ACT VI: HEARTHSIDE TABLE INVITATION
+   ========================================================================== */
+.hearth-invitation-cta {
+  margin: 70px 4vw 100px;
+  background: radial-gradient(circle at 50% 20%, #3a2215 0%, #1a120c 60%, #0e0b08 100%);
+  border: 1px solid var(--border-gold-strong);
+  border-radius: 36px;
+  padding: 90px 4vw;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg), 0 0 60px rgba(232, 168, 72, 0.15);
+}
+
+.hearth-invitation-cta h2 {
+  font-family: var(--font-d);
+  font-size: clamp(38px, 5.2vw, 70px);
+  color: var(--cream);
+  font-weight: 700;
+  line-height: 1.08;
+  margin-bottom: 18px;
+}
+
+.hearth-invitation-cta h2 em {
+  color: var(--amber);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.hearth-invitation-cta p {
+  color: var(--cream-soft);
+  font-size: 17px;
+  max-width: 660px;
+  margin: 0 auto 28px;
+  line-height: 1.7;
+}
+
+.hearth-telemetry-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(12, 10, 8, 0.75);
+  border: 1px solid var(--border-gold);
+  padding: 8px 22px;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--cream-soft);
+  margin-bottom: 34px;
+}
+
+.hearth-cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
    Architectural Footer
    ========================================================================== */
 footer {
@@ -1802,12 +2625,38 @@ footer {
   .bell-rush-inner,
   .story-grid,
   .booking-card,
-  .visit-hub-grid {
+  .visit-hub-grid,
+  .craft-stage-display,
+  .dialectic-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
+  .craft-steps-nav,
+  .fusion-cards-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .craft-stage-display {
+    padding: 30px;
+  }
+  .craft-media-frame {
+    height: 380px;
+  }
   .hero-stage-visual {
     height: 480px;
+  }
+  .hero-altar-stage {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+  .hero-altar-center {
+    order: -1;
+  }
+  .hero-heroic-centerpiece {
+    width: 320px;
+    height: 400px;
   }
   .menu-stage-grid,
   .craft-gallery,
@@ -1827,12 +2676,91 @@ footer {
 }
 
 @media (max-width: 650px) {
+  #nav {
+    padding: 12px 16px;
+  }
+  .nav-actions .btn {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+  .logo-title span {
+    font-size: 16px;
+    letter-spacing: 1.5px;
+  }
+  .logo-title small {
+    font-size: 7.5px;
+    letter-spacing: 1.2px;
+  }
+  .logo-badge {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+  .journey-act-pill {
+    font-size: 9.5px;
+    letter-spacing: 0.8px;
+    padding: 5px 12px;
+    gap: 6px;
+  }
+  .hero-masthead {
+    margin-bottom: 22px;
+  }
+  .hero-headline {
+    font-size: clamp(26px, 7vw, 38px);
+    line-height: 1.15;
+  }
+  .arch-keystone-pill {
+    font-size: 10px;
+    padding: 5px 12px;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .arch-keystone-pill .keystone-chamber {
+    font-size: 10px;
+  }
+  .arch-keystone-pill .keystone-batch {
+    font-size: 9.5px;
+  }
+  .hero-heroic-centerpiece {
+    width: 260px;
+    height: 320px;
+    border-radius: 130px 130px 20px 20px;
+  }
+  .hero-altar-stage {
+    gap: 24px;
+  }
+  .hero-manifesto-box,
+  .hero-telemetry-podium {
+    padding: 20px 16px;
+  }
   .menu-stage-grid,
   .craft-gallery,
   .stats-banner,
   .timeline-tile,
   .form-split {
     grid-template-columns: 1fr;
+  }
+  .peel-tray-card {
+    flex: 0 0 280px;
+  }
+  .craft-stage-display {
+    padding: 20px;
+  }
+  .craft-media-frame {
+    height: 280px;
+  }
+  .craft-specs-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .dialectic-wing {
+    padding: 26px 20px;
+  }
+  .dialectic-fusion-box {
+    padding: 26px 20px;
+  }
+  .hearth-invitation-cta {
+    padding: 60px 20px;
   }
   .foot-grid {
     grid-template-columns: 1fr;
@@ -1846,10 +2774,6 @@ footer {
   }
   .hero-stage-visual {
     height: 420px;
-  }
-  .hero-heroic-centerpiece {
-    width: 290px;
-    height: 380px;
   }
   .sat-2, .sat-3 {
     display: none; /* Hide overflow satellites on narrow mobile */
@@ -1874,6 +2798,64 @@ footer {
   }
   .booking-card {
     padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  #nav {
+    padding: 10px 14px;
+  }
+  .logo-title span {
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+  .logo-title small {
+    display: none;
+  }
+  .nav-actions .btn {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+  #burger {
+    padding: 7px;
+  }
+  .hero-stage {
+    padding: 40px 14px 60px;
+  }
+  .hero-headline {
+    font-size: clamp(24px, 6.5vw, 32px);
+    line-height: 1.15;
+  }
+  .journey-act-pill {
+    font-size: 9px;
+    padding: 4px 10px;
+    gap: 5px;
+    letter-spacing: 0.6px;
+  }
+  .arch-keystone-pill {
+    font-size: 9.5px;
+    padding: 4px 10px;
+    gap: 5px;
+  }
+  .hero-heroic-centerpiece {
+    width: 240px;
+    height: 300px;
+    border-radius: 120px 120px 18px 18px;
+  }
+  .hero-manifesto-box,
+  .hero-telemetry-podium {
+    padding: 16px 14px;
+  }
+  .hero-manifesto-box p {
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+  .hero-btn-row .btn {
+    padding: 11px 14px;
+    font-size: 13px;
+  }
+  .satellite-card {
+    padding: 8px 12px;
   }
 }
 
